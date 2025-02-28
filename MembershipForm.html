@@ -1,0 +1,248 @@
+﻿<html>
+  <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+  <link rel="stylesheet" href="Content/bootstrap.min.css" />
+  <link rel="stylesheet" href="Content/Site.css" />
+
+  <head>
+    <meta charset="UTF-8" />
+    <title>HCARC Membership Form</title>
+  </head>
+  <body>
+    <div>
+      <h1>Hays-Caldwell Amateur Radio Club Membership Form</h1>
+    </div>
+    <div>
+      <h2>Member Information</h2>
+      <asp:Panel BackColor="#ffff99" runat="server">
+        <asp:Label ID="Label1" runat="server" Text="Name:"></asp:Label>
+        <asp:TextBox ID="tbName" runat="server" Width="300"></asp:TextBox>
+        <p />
+        <asp:Label ID="Label2" runat="server" Text="Callsign:"></asp:Label>
+        <asp:TextBox ID="tbCallsign" runat="server"></asp:TextBox>
+        <asp:Label ID="Label3" runat="server" Text="Class:"></asp:Label>
+        <asp:TextBox ID="tbClass" runat="server"></asp:TextBox>
+        <p />
+        <asp:Label ID="Label4" runat="server" Text="Cell Phone:"></asp:Label>
+        <asp:TextBox ID="tbCellPhone" runat="server"></asp:TextBox>
+        <asp:Label ID="Label5" runat="server" Text="Home Phone:"></asp:Label>
+        <asp:TextBox ID="tbHomePhone" runat="server"></asp:TextBox>
+        <p />
+        <asp:Label ID="Label6" runat="server" Text="Email:"></asp:Label>
+        <asp:TextBox ID="tbEmail" runat="server" Width="300"></asp:TextBox>
+        <p />
+        <asp:Label
+          ID="Label7"
+          runat="server"
+          Text="Mailing Address:"
+        ></asp:Label>
+        <asp:TextBox ID="tbAddress" runat="server" Width="300"></asp:TextBox>
+        <p />
+        <asp:Label ID="Label8" runat="server" Text="City:"></asp:Label>
+        <asp:TextBox ID="tbCity" runat="server"></asp:TextBox>
+        <asp:Label ID="Label9" runat="server" Text="State:"></asp:Label>
+        <asp:TextBox ID="tbState" runat="server"></asp:TextBox>
+        <asp:Label ID="Label10" runat="server" Text="Zip:"></asp:Label>
+        <asp:TextBox ID="tbZip" runat="server" Width="75"></asp:TextBox>
+        <p />
+        <asp:Label
+          ID="Label11"
+          runat="server"
+          Text="Emergency Contact:"
+        ></asp:Label>
+        <asp:TextBox
+          ID="tbEmergencyContact"
+          runat="server"
+          Width="300"
+        ></asp:TextBox>
+      </asp:Panel>
+    </div>
+    <div>
+      <h2>Ham Radio Level of Interest</h2>
+      <asp:Panel BackColor="#ffff99" runat="server">
+        <asp:Label
+          ID="Label12"
+          runat="server"
+          Text="Are you a member of ARRL?"
+        ></asp:Label>
+        <asp:RadioButton
+          ID="rbARRLY"
+          runat="server"
+          Text="yes"
+          GroupName="ARRL"
+        />
+        <asp:RadioButton
+          ID="rbARRLN"
+          runat="server"
+          Text="no"
+          GroupName="ARRL"
+        />
+        <p />
+        <asp:Label
+          ID="Label13"
+          runat="server"
+          Text="What club activities are you willing to work on?"
+        ></asp:Label>
+        <p />
+        <asp:Table ID="Table1" runat="server">
+          <asp:TableRow>
+            <asp:TableCell Width="150px">
+              <asp:CheckBox
+                ID="cbFieldDay"
+                runat="server"
+                Text="Field Day"
+                TextAlign="Left"
+              />
+            </asp:TableCell>
+            <asp:TableCell Width="225px">
+              <asp:CheckBox
+                ID="cbSocial"
+                runat="server"
+                Text="Social Activities"
+                TextAlign="Left"
+              />
+            </asp:TableCell>
+            <asp:TableCell Width="220px">
+              <asp:CheckBox
+                ID="cbInstruct"
+                runat="server"
+                Text="Instruct Radio Classes"
+                TextAlign="Left"
+              />
+            </asp:TableCell>
+          </asp:TableRow>
+          <asp:TableRow>
+            <asp:TableCell>
+              <asp:CheckBox
+                ID="cbOfficer"
+                runat="server"
+                Text="Club Officer"
+                TextAlign="Left"
+              />
+            </asp:TableCell>
+            <asp:TableCell>
+              <asp:CheckBox
+                ID="cbPresent"
+                runat="server"
+                Text="Present a program at meeting"
+                TextAlign="Left"
+              />
+            </asp:TableCell>
+          </asp:TableRow>
+          <asp:TableRow>
+            <asp:TableCell>
+              <asp:CheckBox
+                ID="cbARES"
+                runat="server"
+                Text="ARES"
+                TextAlign="Left"
+              />
+            </asp:TableCell>
+            <asp:TableCell ColumnSpan="2">
+              <asp:Label ID="Label14" runat="server" Text="Other:"></asp:Label>
+
+              <asp:TextBox
+                ID="tbOther"
+                runat="server"
+                Width="300"
+              ></asp:TextBox>
+            </asp:TableCell>
+          </asp:TableRow>
+        </asp:Table>
+      </asp:Panel>
+
+      <h2>Rig Information</h2>
+      <asp:Panel BackColor="#ffff99" runat="server">
+        <asp:Label
+          ID="Label15"
+          runat="server"
+          Text="Please indicate the radio equipment you have and are licensed to use:"
+        ></asp:Label>
+        <asp:Table ID="Table2" runat="server">
+          <asp:TableRow>
+            <asp:TableCell Width="150px">
+              <asp:CheckBox
+                ID="cbVHFHT"
+                runat="server"
+                Text="VHF Handheld"
+                TextAlign="Left"
+              />
+            </asp:TableCell>
+            <asp:TableCell Width="100px">
+              <asp:CheckBox
+                ID="cbVHFMobile"
+                runat="server"
+                Text="Mobile"
+                TextAlign="Left"
+              />
+            </asp:TableCell>
+            <asp:TableCell Width="100px">
+              <asp:CheckBox
+                ID="cbVHFBase"
+                runat="server"
+                Text="Base"
+                TextAlign="Left"
+              />
+            </asp:TableCell>
+          </asp:TableRow>
+          <asp:TableRow>
+            <asp:TableCell>
+              <asp:CheckBox
+                ID="cbUHFHT"
+                runat="server"
+                Text="UHF Handheld"
+                TextAlign="Left"
+              />
+            </asp:TableCell>
+            <asp:TableCell>
+              <asp:CheckBox
+                ID="cbUHFMobile"
+                runat="server"
+                Text="Mobile"
+                TextAlign="Left"
+              />
+            </asp:TableCell>
+            <asp:TableCell>
+              <asp:CheckBox
+                ID="cbUHFBase"
+                runat="server"
+                Text="Base"
+                TextAlign="Left"
+              />
+            </asp:TableCell>
+          </asp:TableRow>
+          <asp:TableRow>
+            <asp:TableCell ColumnSpan="3">
+              <asp:Label
+                ID="Label16"
+                runat="server"
+                Text="HF Brand/Model:"
+              ></asp:Label>
+              <asp:TextBox
+                ID="tbHFModel"
+                runat="server"
+                Width="300"
+              ></asp:TextBox>
+            </asp:TableCell>
+          </asp:TableRow>
+        </asp:Table>
+      </asp:Panel>
+    </div>
+
+    <p />
+    <asp:Button
+      ID="btnSubmit"
+      runat="server"
+      OnClick="btnSubmit_Click"
+      Text="Submit"
+      Width="100"
+    />
+    <p />
+    Annual club dues are $15, payable at the start of each calendar year.
+    <p />
+    Please make check payable to "Hays-Caldwell Amateur Radio Club"
+    <p />
+    Or, you may use the PayPal to pay for your membership. Be sure to SUBMIT
+    (save) this form before returning to the home page!
+    <p />
+  </body>
+</html>
