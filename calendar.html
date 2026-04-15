@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HCHAMS Club Calendar</title>
+ 
+    <link href='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.10/index.global.css' rel='stylesheet' />
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+        }
+ 
+        .calendar-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+ 
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-top: 0;
+        }
+ 
+        #calendar {
+            font-size: 14px;
+        }
+ 
+        .fc-button-primary {
+            background-color: #0066cc;
+            border-color: #0066cc;
+        }
+ 
+        .fc-button-primary:not(:disabled).fc-button-active {
+            background-color: #004a99;
+            border-color: #004a99;
+        }
+    </style>
+</head>
+<body>
+    <div class="calendar-container">
+        <h1>HCHAMS Club Calendar</h1>
+        <div id='calendar'></div>
+    </div>
+ 
+    <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.10/index.global.js'></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var calendarEl = document.getElementById('calendar');
+            var calendar = new FullCalendar.Calendar(calendarEl, {
+                initialView: 'dayGridMonth',
+                headerToolbar: {
+                    left: 'prev,next today',
+                    center: 'title',
+                    right: 'dayGridMonth,timeGridWeek,timeGridDay'
+                },
+                height: 'auto',
+                contentHeight: 'auto',
+                events: {
+                    url: 'https://groups.io/g/hchams/calendar/feed.ics',
+                    failure: function() {
+                        alert('Error loading calendar from groups.io');
+                    }
+                },
+                datesSet: function(info) {
+                    // Optional: Refresh calendar data periodically
+                }
+            });
+            calendar.render();
+        });
+    </script>
+</body>
+</html>
+ 
