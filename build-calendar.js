@@ -53,6 +53,7 @@ async function main() {
     }
 
     console.log('Parsing events...');
+    const parsed = ical.parseICS(icsData);
 
     const events = Object.values(parsed)
         .filter(e => e.type === 'VEVENT')
