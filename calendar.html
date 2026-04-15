@@ -52,6 +52,58 @@
       display: none;
       margin-top: 20px;
     }
+
+    /* Event detail popup */
+    #event-popup {
+      display: none;
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 90%;
+      max-width: 420px;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+      z-index: 9999;
+      overflow: hidden;
+    }
+    #event-popup-header {
+      background: #1e3a5f;
+      color: #fff;
+      padding: 12px 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    #event-popup-header.gold { background: #c8920a; }
+    #event-popup-header.green { background: #1a7a4a; }
+    #event-popup-title {
+      font-size: 16px;
+      font-weight: bold;
+      margin: 0;
+    }
+    #event-popup-close {
+      background: none;
+      border: none;
+      color: #fff;
+      font-size: 22px;
+      cursor: pointer;
+      line-height: 1;
+      padding: 0 4px;
+    }
+    #event-popup-body {
+      padding: 14px 16px;
+      font-size: 14px;
+      color: #333;
+    }
+    #event-popup-body p {
+      margin: 6px 0;
+    }
+    #event-popup-body .label {
+      font-weight: bold;
+      color: #1e3a5f;
+    }
   </style>
 </head>
 <body>
@@ -90,6 +142,15 @@
     </p>
   </div>
 
+  <!-- Event detail popup (replaces browser alert on mobile) -->
+  <div id="event-popup">
+    <div id="event-popup-header">
+      <span id="event-popup-title"></span>
+      <button id="event-popup-close" onclick="document.getElementById('event-popup').style.display='none'">&times;</button>
+    </div>
+    <div id="event-popup-body"></div>
+  </div>
+
   <div class="body-content">
     <div id="calendar"></div>
     <div id="calendar-error" class="alert alert-warning" style="display:none;">
@@ -119,14 +180,41 @@
         },
         height: 'auto',
         eventClick: function (info) {
-          var msg = info.event.title;
-          if (info.event.extendedProps.description) {
-            msg += '\n\n' + info.event.extendedProps.description;
+          var e      = info.event;
+          var props  = e.extendedProps;
+          var popup  = document.getElementById('event-popup');
+          var header = document.getElementById('event-popup-header');
+          var title  = document.getElementById('event-popup-title');
+          var body   = document.getElementById('event-popup-body');
+
+          // Header color matches event type
+          header.className = '';
+          var t = e.title.toLowerCase();
+          if (t.includes('net'))          header.className = 'green';
+          else if (!t.includes('meeting')) header.className = 'gold';
+
+          title.textContent = e.title;
+
+          // Build body content
+          var html = '';
+          var start = e.start;
+          if (start) {
+            var dateStr = start.toLocaleDateString('en-US', { weekday:'long', month:'long', day:'numeric', year:'numeric' });
+            var timeStr = start.toLocaleTimeString('en-US', { hour:'2-digit', minute:'2-digit' });
+            html += '<p><span class="label">📅 Date:</span> ' + dateStr + '</p>';
+            if (timeStr !== '12:00 AM') {
+              html += '<p><span class="label">🕐 Time:</span> ' + timeStr + '</p>';
+            }
           }
-          if (info.event.extendedProps.location) {
-            msg += '\n\n📍 ' + info.event.extendedProps.location;
+          if (props.location) {
+            html += '<p><span class="label">📍 Location:</span> ' + props.location + '</p>';
           }
-          alert(msg);
+          if (props.description) {
+            html += '<p><span class="label">ℹ️ Details:</span> ' + props.description + '</p>';
+          }
+
+          body.innerHTML = html || '<p>No additional details.</p>';
+          popup.style.display = 'block';
         },
         noEventsContent: 'No upcoming events found.'
       });
