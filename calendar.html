@@ -72,37 +72,12 @@
   </div>
 
   <div class="body-content">
-
-    <!-- =========================================================
-         OPTION A: groups.io iframe embed (simplest — try this first).
-         If it shows a blank box or login screen, delete this block
-         and use Option B below instead.
-    ========================================================= -->
-    <div id="iframe-calendar">
-      <iframe
-        src="https://groups.io/g/hchams/calendar"
-        width="100%"
-        height="650"
-        frameborder="0"
-        style="border: 1px solid #ccc; border-radius: 4px;">
-      </iframe>
-      <p style="margin-top:8px; font-size:13px; color:#666;">
-        Not displaying? <a href="https://groups.io/g/hchams/calendar" target="_blank">View on Groups.io directly</a>.
-      </p>
-    </div>
-
-    <!-- =========================================================
-         OPTION B: FullCalendar fed from the ICS feed via JS proxy.
-         To use this instead: delete the iframe block above and
-         remove the "display:none" style from this div.
-    ========================================================= -->
-    <div id="calendar" style="display:none;"></div>
+    <div id="calendar"></div>
     <div id="calendar-error" class="alert alert-warning" style="display:none;">
       <strong>Could not load calendar events.</strong>
       You can view them directly on
       <a href="https://groups.io/g/hchams/calendar" target="_blank">Groups.io</a>.
     </div>
-
   </div>
 
   <footer style="text-align: center;">
@@ -112,9 +87,7 @@
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.10/index.global.js"></script>
-  <!-- ical.js parses the ICS feed into events FullCalendar can use -->
-  <script src="https://cdn.jsdelivr.net/npm/ical.js@1.5.0/build/ical.min.js"></script>
-  <script>
+<script>
     document.addEventListener('DOMContentLoaded', function () {
       var calendarEl = document.getElementById('calendar');
 
@@ -141,35 +114,25 @@
 
       calendar.render();
 
-      // Fetch ICS feed via CORS proxy. This works when the page is served
-      // from a real web server (hchams.com). Testing by opening the file
-      // directly from your computer won't work — use the live site to test.
-      var ICS_URL = 'https://groups.io/g/hchams/ics/7239158/2068135138/feed.ics';
-      var PROXY   = 'https://api.allorigins.win/raw?url=' + encodeURIComponent(ICS_URL);
-
-      fetch(PROXY)
+      // Load pre-built events from local JSON (generated daily by GitHub Actions).
+      // No CORS issues — same server, same domain.
+      fetch('generated/events.json')
         .then(function(r) {
-          if (!r.ok) throw new Error('HTTP ' + r.status);
-          return r.text();
+          if (!r.ok) throw new Error('events.json not found');
+          return r.json();
         })
-        .then(function(icsText) {
-          var jcal    = ICAL.parse(icsText);
-          var comp    = new ICAL.Component(jcal);
-          var vevents = comp.getAllSubcomponents('vevent');
-
-          var events = vevents.map(function(vevent) {
-            var ev = new ICAL.Event(vevent);
+        .then(function(data) {
+          var events = data.events.map(function(e) {
             return {
-              title: ev.summary || 'Club Event',
-              start: ev.startDate.toJSDate(),
-              end:   ev.endDate ? ev.endDate.toJSDate() : null,
+              title: e.title,
+              start: e.start,
+              end:   e.end   || null,
               extendedProps: {
-                description: ev.description || '',
-                location:    ev.location    || ''
+                description: e.description || '',
+                location:    e.location    || ''
               }
             };
           });
-
           calendar.addEventSource(events);
         })
         .catch(function(err) {

@@ -1,0 +1,32 @@
+name: Update Calendar
+
+on:
+  schedule:
+    # Every day at 6 AM Central (11:00 UTC)
+    - cron: '0 11 * * *'
+  workflow_dispatch:  # Lets you trigger it manually from GitHub too
+
+jobs:
+  build-calendar:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install ical package
+        run: npm install ical
+
+      - name: Fetch events and build events.json
+        run: node build-calendar.js
+
+      - name: Commit and push updated events.json
+        run: |
+          git config user.name  "GitHub Actions Bot"
+          git config user.email "actions@github.com"
+          git add generated/events.json
+          git diff --staged --quiet && echo "No changes." || (git commit -m "Auto-update calendar events [skip ci]" && git push)
