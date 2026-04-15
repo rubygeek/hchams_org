@@ -56,32 +56,55 @@ async function main() {
     const parsed = ical.parseICS(icsData);
 
     const allItems = Object.values(parsed);
-    console.log(`Total items in ICS: ${allItems.length}`);
+    const vevents  = allItems.filter(e => e.type === 'VEVENT');
+    console.log(`Total ICS items: ${allItems.length}, VEVENTs: ${vevents.length}`);
 
-    const vevents = allItems.filter(e => e.type === 'VEVENT');
-    console.log(`VEVENT items found: ${vevents.length}`);
+    // Expand recurring events from 30 days ago through 1 year ahead
+    const rangeStart = new Date();
+    rangeStart.setDate(rangeStart.getDate() - 30);
+    const rangeEnd = new Date();
+    rangeEnd.setFullYear(rangeEnd.getFullYear() + 1);
 
-    if (vevents.length > 0) {
-        console.log('First event sample:', JSON.stringify(vevents[0], null, 2).substring(0, 500));
-    }
+    const events = [];
 
-    const events = vevents
-        .map(e => {
+    vevents.forEach(e => {
+        const duration = (e.end && e.start)
+            ? (new Date(e.end) - new Date(e.start))
+            : 0;
+
+        if (e.rrule) {
+            // Recurring event — expand all occurrences within range
+            const occurrences = e.rrule.between(rangeStart, rangeEnd, true);
+            console.log(`  Recurring "${e.summary}": ${occurrences.length} occurrences`);
+            occurrences.forEach(date => {
+                events.push({
+                    title:       e.summary     || 'Club Event',
+                    start:       date.toISOString(),
+                    end:         duration ? new Date(date.getTime() + duration).toISOString() : null,
+                    description: e.description || '',
+                    location:    e.location    || ''
+                });
+            });
+        } else {
+            // Single event — include if within range
             try {
-                return {
-                    title:       e.summary      || 'Club Event',
-                    start:       e.start        ? new Date(e.start).toISOString() : null,
-                    end:         e.end          ? new Date(e.end).toISOString()   : null,
-                    description: e.description  || '',
-                    location:    e.location     || ''
-                };
+                const start = new Date(e.start);
+                if (start >= rangeStart) {
+                    events.push({
+                        title:       e.summary     || 'Club Event',
+                        start:       start.toISOString(),
+                        end:         e.end ? new Date(e.end).toISOString() : null,
+                        description: e.description || '',
+                        location:    e.location    || ''
+                    });
+                }
             } catch(err) {
-                console.log('Skipping event due to date error:', e.summary, err.message);
-                return null;
+                console.log(`  Skipping "${e.summary}": ${err.message}`);
             }
-        })
-        .filter(e => e && e.start)
-        .sort((a, b) => new Date(a.start) - new Date(b.start));
+        }
+    });
+
+    events.sort((a, b) => new Date(a.start) - new Date(b.start));
 
     const output = {
         generated: new Date().toISOString(),

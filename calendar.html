@@ -19,12 +19,31 @@
       background-color: #a87508 !important;
       border-color: #7f5906 !important;
     }
+    /* Default event color: gold */
     .fc-event {
+      background-color: #c8920a !important;
+      border-color: #a87508 !important;
+      color: #fff !important;
+      font-weight: 500;
+    }
+    /* Monthly Meeting: navy so it stands out */
+    .fc-event.meeting {
       background-color: #1e3a5f !important;
       border-color: #142b47 !important;
     }
+    /* NET events: teal/green */
+    .fc-event.net {
+      background-color: #1a7a4a !important;
+      border-color: #145e38 !important;
+    }
+    /* Today highlight */
     .fc-day-today {
-      background-color: #e8f0f8 !important;
+      background-color: #fdf6e3 !important;
+    }
+    /* Make event text readable */
+    .fc-event .fc-event-title,
+    .fc-event .fc-event-time {
+      color: #fff !important;
     }
     #calendar {
       font-size: 14px;
