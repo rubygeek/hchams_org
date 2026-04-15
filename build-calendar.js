@@ -18,12 +18,21 @@ if (!fs.existsSync(OUTPUT_DIR)) {
     fs.mkdirSync(OUTPUT_DIR, { recursive: true });
 }
 
-function fetchICS(url) {
+function fetchICS(url, redirectCount = 0) {
+    if (redirectCount > 5) return Promise.reject(new Error('Too many redirects'));
+
+    const options = {
+        headers: {
+            'User-Agent':  'Mozilla/5.0 (compatible; calendar-bot/1.0)',
+            'Accept':      'text/calendar, text/plain, */*',
+        }
+    };
+
     return new Promise((resolve, reject) => {
-        https.get(url, (res) => {
-            // Follow a single redirect if needed
-            if (res.statusCode === 301 || res.statusCode === 302) {
-                return fetchICS(res.headers.location).then(resolve).catch(reject);
+        https.get(url, options, (res) => {
+            console.log(`HTTP ${res.statusCode} from ${url}`);
+            if (res.statusCode === 301 || res.statusCode === 302 || res.statusCode === 307 || res.statusCode === 308) {
+                return fetchICS(res.headers.location, redirectCount + 1).then(resolve).catch(reject);
             }
             let data = '';
             res.on('data', chunk => data += chunk);
@@ -36,8 +45,14 @@ async function main() {
     console.log('Fetching ICS feed from groups.io...');
     const icsData = await fetchICS(ICS_URL);
 
+    // Log first 300 chars so we can see in Actions log if we got ICS or an HTML error page
+    console.log('Response preview:', icsData.substring(0, 300));
+
+    if (!icsData.includes('BEGIN:VCALENDAR')) {
+        throw new Error('Response is not a valid ICS file — groups.io may require authentication or the URL is wrong');
+    }
+
     console.log('Parsing events...');
-    const parsed = ical.parseICS(icsData);
 
     const events = Object.values(parsed)
         .filter(e => e.type === 'VEVENT')
