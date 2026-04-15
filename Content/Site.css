@@ -135,17 +135,17 @@ p {
     color: #1e3a5f !important;
 }
 
-/* Buttons inside the dark jumbotron need a white outline style */
+/* Buttons inside the dark jumbotron: dark orange with white text */
 .jumbotron .btn-default {
-    background-color: transparent;
-    border-color: #fff;
+    background-color: #c05c00;
+    border-color: #a34e00;
     color: #fff !important;
 }
 
 .jumbotron .btn-default:hover,
 .jumbotron .btn-default:focus {
-    background-color: rgba(255,255,255,0.15);
-    border-color: #fff;
+    background-color: #a34e00;
+    border-color: #7a3a00;
     color: #fff !important;
 }
 
