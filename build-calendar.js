@@ -55,16 +55,32 @@ async function main() {
     console.log('Parsing events...');
     const parsed = ical.parseICS(icsData);
 
-    const events = Object.values(parsed)
-        .filter(e => e.type === 'VEVENT')
-        .map(e => ({
-            title:       e.summary      || 'Club Event',
-            start:       e.start        ? e.start.toISOString()  : null,
-            end:         e.end          ? e.end.toISOString()     : null,
-            description: e.description  || '',
-            location:    e.location     || ''
-        }))
-        .filter(e => e.start)
+    const allItems = Object.values(parsed);
+    console.log(`Total items in ICS: ${allItems.length}`);
+
+    const vevents = allItems.filter(e => e.type === 'VEVENT');
+    console.log(`VEVENT items found: ${vevents.length}`);
+
+    if (vevents.length > 0) {
+        console.log('First event sample:', JSON.stringify(vevents[0], null, 2).substring(0, 500));
+    }
+
+    const events = vevents
+        .map(e => {
+            try {
+                return {
+                    title:       e.summary      || 'Club Event',
+                    start:       e.start        ? new Date(e.start).toISOString() : null,
+                    end:         e.end          ? new Date(e.end).toISOString()   : null,
+                    description: e.description  || '',
+                    location:    e.location     || ''
+                };
+            } catch(err) {
+                console.log('Skipping event due to date error:', e.summary, err.message);
+                return null;
+            }
+        })
+        .filter(e => e && e.start)
         .sort((a, b) => new Date(a.start) - new Date(b.start));
 
     const output = {
