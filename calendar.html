@@ -142,10 +142,15 @@
         })
         .then(function(data) {
           var events = data.events.map(function(e) {
+            var className = '';
+            var t = e.title.toLowerCase();
+            if (t.includes('meeting'))         className = 'meeting';
+            else if (t.includes('net'))        className = 'net';
             return {
-              title: e.title,
-              start: e.start,
-              end:   e.end   || null,
+              title:     e.title,
+              start:     e.start,
+              end:       e.end || null,
+              className: className,
               extendedProps: {
                 description: e.description || '',
                 location:    e.location    || ''
