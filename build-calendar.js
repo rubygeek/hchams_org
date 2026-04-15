@@ -45,9 +45,6 @@ async function main() {
     console.log('Fetching ICS feed from groups.io...');
     const icsData = await fetchICS(ICS_URL);
 
-    // Log first 300 chars so we can see in Actions log if we got ICS or an HTML error page
-    console.log('Response preview:', icsData.substring(0, 300));
-
     if (!icsData.includes('BEGIN:VCALENDAR')) {
         throw new Error('Response is not a valid ICS file — groups.io may require authentication or the URL is wrong');
     }
@@ -72,12 +69,9 @@ async function main() {
             ? (new Date(e.end) - new Date(e.start))
             : 0;
 
-        console.log(`Event: "${e.summary}" | rrule: ${e.rrule ? e.rrule.toString() : 'NONE'} | start: ${e.start}`);
-
         if (e.rrule) {
             // Recurring event — expand all occurrences within range
             const occurrences = e.rrule.between(rangeStart, rangeEnd, true);
-            console.log(`  Recurring "${e.summary}": ${occurrences.length} occurrences`);
             occurrences.forEach(date => {
                 events.push({
                     title:       e.summary     || 'Club Event',
