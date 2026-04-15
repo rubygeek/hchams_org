@@ -72,6 +72,8 @@ async function main() {
             ? (new Date(e.end) - new Date(e.start))
             : 0;
 
+        console.log(`Event: "${e.summary}" | rrule: ${e.rrule ? e.rrule.toString() : 'NONE'} | start: ${e.start}`);
+
         if (e.rrule) {
             // Recurring event — expand all occurrences within range
             const occurrences = e.rrule.between(rangeStart, rangeEnd, true);
