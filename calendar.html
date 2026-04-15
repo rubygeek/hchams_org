@@ -1,81 +1,157 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HCHAMS Club Calendar</title>
- 
-    <link href='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.10/index.global.css' rel='stylesheet' />
-    <style>
-        body {
-            margin: 0;
-            padding: 20px;
-            font-family: Arial, sans-serif;
-            background-color: #f5f5f5;
-        }
- 
-        .calendar-container {
-            max-width: 1000px;
-            margin: 0 auto;
-            background-color: white;
-            border-radius: 8px;
-            padding: 20px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
- 
-        h1 {
-            color: #333;
-            text-align: center;
-            margin-top: 0;
-        }
- 
-        #calendar {
-            font-size: 14px;
-        }
- 
-        .fc-button-primary {
-            background-color: #0066cc;
-            border-color: #0066cc;
-        }
- 
-        .fc-button-primary:not(:disabled).fc-button-active {
-            background-color: #004a99;
-            border-color: #004a99;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Calendar - HCARC KE5LOT</title>
+  <link rel="stylesheet" href="Content/bootstrap.min.css" />
+  <link rel="stylesheet" href="Content/Site.css" />
+  <link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.10/index.global.css" rel="stylesheet" />
+  <style>
+    /* Match FullCalendar buttons to site gold/navy scheme */
+    .fc-button-primary {
+      background-color: #c8920a !important;
+      border-color: #a87508 !important;
+      color: #fff !important;
+    }
+    .fc-button-primary:not(:disabled).fc-button-active,
+    .fc-button-primary:hover {
+      background-color: #a87508 !important;
+      border-color: #7f5906 !important;
+    }
+    .fc-event {
+      background-color: #1e3a5f !important;
+      border-color: #142b47 !important;
+    }
+    .fc-day-today {
+      background-color: #e8f0f8 !important;
+    }
+    #calendar {
+      font-size: 14px;
+    }
+    #calendar-error {
+      display: none;
+      margin-top: 20px;
+    }
+  </style>
 </head>
 <body>
-    <div class="calendar-container">
-        <h1>HCHAMS Club Calendar</h1>
-        <div id='calendar'></div>
+
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#site-nav">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html">HCARC KE5LOT</a>
+      </div>
+      <div class="collapse navbar-collapse" id="site-nav">
+        <ul class="nav navbar-nav">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="About.html">About</a></li>
+          <li><a href="LearnMore.html">Learn More</a></li>
+          <li class="active"><a href="calendar.html">Calendar</a></li>
+          <li><a href="Contact.html">Contact</a></li>
+          <li><a href="ClubApplicationForm.pdf">Join Us</a></li>
+        </ul>
+      </div>
     </div>
- 
-    <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.10/index.global.js'></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            var calendarEl = document.getElementById('calendar');
-            var calendar = new FullCalendar.Calendar(calendarEl, {
-                initialView: 'dayGridMonth',
-                headerToolbar: {
-                    left: 'prev,next today',
-                    center: 'title',
-                    right: 'dayGridMonth,timeGridWeek,timeGridDay'
-                },
-                height: 'auto',
-                contentHeight: 'auto',
-                events: {
-                    url: 'https://groups.io/g/hchams/calendar/feed.ics',
-                    failure: function() {
-                        alert('Error loading calendar from groups.io');
-                    }
-                },
-                datesSet: function(info) {
-                    // Optional: Refresh calendar data periodically
-                }
-            });
-            calendar.render();
+  </nav>
+
+  <div class="jumbotron">
+    <h1>HCARC Club Calendar</h1>
+    <p class="lead">
+      Club meetings, nets, and events — synced live from our
+      <a href="https://hchams.groups.io">Groups.io</a> calendar.<br />
+      Monthly meetings are held the <strong>third Saturday</strong> at 10 AM at the
+      Kyle Public Safety Center, 1700 Kohlers Crossing, Kyle TX.
+    </p>
+  </div>
+
+  <div class="body-content">
+    <div id="calendar"></div>
+    <div id="calendar-error" class="alert alert-warning">
+      <strong>Could not load calendar events.</strong>
+      You can view them directly on
+      <a href="https://groups.io/g/hchams/calendar" target="_blank">Groups.io</a>.
+    </div>
+  </div>
+
+  <footer style="text-align: center;">
+    <p>&copy; 2025 - Hays-Caldwell Amateur Radio Club</p>
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.10/index.global.js"></script>
+  <!-- ical.js parses the ICS feed into events FullCalendar can use -->
+  <script src="https://cdn.jsdelivr.net/npm/ical.js@1.5.0/build/ical.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var calendarEl = document.getElementById('calendar');
+
+      var calendar = new FullCalendar.Calendar(calendarEl, {
+        initialView: 'dayGridMonth',
+        headerToolbar: {
+          left: 'prev,next today',
+          center: 'title',
+          right: 'dayGridMonth,timeGridWeek,listMonth'
+        },
+        height: 'auto',
+        eventClick: function (info) {
+          var msg = info.event.title;
+          if (info.event.extendedProps.description) {
+            msg += '\n\n' + info.event.extendedProps.description;
+          }
+          if (info.event.extendedProps.location) {
+            msg += '\n\n📍 ' + info.event.extendedProps.location;
+          }
+          alert(msg);
+        },
+        noEventsContent: 'No upcoming events found.'
+      });
+
+      calendar.render();
+
+      // Fetch ICS feed via CORS proxy. This works when the page is served
+      // from a real web server (hchams.com). Testing by opening the file
+      // directly from your computer won't work — use the live site to test.
+      var ICS_URL = 'https://groups.io/g/hchams/ics/7239158/2068135138/feed.ics';
+      var PROXY   = 'https://api.allorigins.win/raw?url=' + encodeURIComponent(ICS_URL);
+
+      fetch(PROXY)
+        .then(function(r) {
+          if (!r.ok) throw new Error('HTTP ' + r.status);
+          return r.text();
+        })
+        .then(function(icsText) {
+          var jcal    = ICAL.parse(icsText);
+          var comp    = new ICAL.Component(jcal);
+          var vevents = comp.getAllSubcomponents('vevent');
+
+          var events = vevents.map(function(vevent) {
+            var ev = new ICAL.Event(vevent);
+            return {
+              title: ev.summary || 'Club Event',
+              start: ev.startDate.toJSDate(),
+              end:   ev.endDate ? ev.endDate.toJSDate() : null,
+              extendedProps: {
+                description: ev.description || '',
+                location:    ev.location    || ''
+              }
+            };
+          });
+
+          calendar.addEventSource(events);
+        })
+        .catch(function(err) {
+          console.error('Calendar load error:', err);
+          document.getElementById('calendar-error').style.display = 'block';
         });
-    </script>
+    });
+  </script>
 </body>
 </html>
- 

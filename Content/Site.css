@@ -1,24 +1,179 @@
-﻿/* Move down content because we have a fixed navbar that is 50px tall */
+/* ============================================================
+   HCARC Site Styles
+   Color scheme: Navy (#1e3a5f) + Gold (#c8920a) + Light blue bg
+   ============================================================ */
+
+/* ---- Layout & spacing ---- */
 body {
     padding-top: 50px;
-    padding-bottom: 20px;
+    padding-bottom: 40px;
+    background-color: #f0f4f8;
+    color: #222;
 }
 
-/* Wrapping element */
-/* Set some basic padding to keep content from hitting the edges */
 .body-content {
-    padding-left: 15px;
-    padding-right: 15px;
+    padding-left: 30px;
+    padding-right: 30px;
+    margin-top: 20px;
 }
 
-/* Override the default bootstrap behavior where horizontal description lists 
-   will truncate terms that are too long to fit in the left column 
-*/
-.dl-horizontal dt {
-    white-space: normal;
+h2, h3 {
+    margin-top: 24px;
+    margin-bottom: 10px;
+    color: #1e3a5f;
 }
 
-/* Set widths on the form inputs since otherwise they're 100% wide */
+p {
+    margin-bottom: 12px;
+}
+
+/* ---- Navbar ---- */
+.navbar-default {
+    background-color: #1e3a5f;
+    border-color: #142b47;
+}
+
+.navbar-default .navbar-brand {
+    color: #f5c842;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+}
+
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-brand:focus {
+    color: #ffe680;
+}
+
+.navbar-default .navbar-nav > li > a {
+    color: #d0e4f7;
+}
+
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+    color: #ffffff;
+    background-color: #2a5085;
+}
+
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+    color: #ffffff;
+    background-color: #c8920a;
+}
+
+.navbar-default .navbar-toggle {
+    border-color: #4a7ab5;
+}
+.navbar-default .navbar-toggle .icon-bar {
+    background-color: #d0e4f7;
+}
+.navbar-default .navbar-toggle:hover,
+.navbar-default .navbar-toggle:focus {
+    background-color: #2a5085;
+}
+
+/* ---- Jumbotron ---- */
+.jumbotron {
+    background-color: #1e3a5f;
+    color: #e8f0f8;
+    padding-left: 40px;
+    padding-right: 40px;
+    border-bottom: 4px solid #c8920a;
+}
+
+.jumbotron h1 {
+    color: #ffffff;
+}
+
+.jumbotron h3 {
+    color: #f5c842;
+    margin-top: 20px;
+}
+
+.jumbotron .lead {
+    color: #d0e4f7;
+}
+
+.jumbotron a {
+    color: #f5c842;
+    text-decoration: underline;
+}
+
+.jumbotron a:hover {
+    color: #ffe680;
+}
+
+.jumbotron strong {
+    color: #ffffff;
+}
+
+/* ---- Buttons ---- */
+.btn-primary {
+    background-color: #c8920a;
+    border-color: #a87508;
+    color: #fff;
+}
+
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active {
+    background-color: #a87508;
+    border-color: #7f5906;
+    color: #fff;
+}
+
+.btn-default {
+    background-color: #fff;
+    border-color: #1e3a5f;
+    color: #1e3a5f;
+}
+
+.btn-default:hover {
+    background-color: #e8f0f8;
+    color: #1e3a5f;
+}
+
+/* ---- Tables ---- */
+.table > thead > tr > th {
+    background-color: #1e3a5f;
+    color: #ffffff;
+    border-color: #142b47;
+}
+
+.table-striped > tbody > tr:nth-of-type(odd) {
+    background-color: #e8f0f8;
+}
+
+/* ---- Links ---- */
+a {
+    color: #1e5fa0;
+}
+
+a:hover {
+    color: #c8920a;
+}
+
+/* ---- Footer ---- */
+footer {
+    background-color: #1e3a5f !important;
+    color: #a0bcd8 !important;
+    margin-top: 40px;
+    padding: 20px 40px !important;
+    border-top: 3px solid #c8920a !important;
+}
+
+footer p {
+    margin: 0;
+    color: #a0bcd8;
+}
+
+/* ---- Section dividers ---- */
+.body-content h2:first-child,
+.body-content h3:first-child {
+    margin-top: 10px;
+}
+
+/* ---- Form inputs ---- */
 input[type="text"],
 input[type="password"],
 input[type="email"],
@@ -27,12 +182,86 @@ input[type="select"] {
     max-width: 280px;
 }
 
-/* Responsive: Portrait tablets and up */
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* ---- Responsive: tablet and up ---- */
 @media screen and (min-width: 768px) {
     .jumbotron {
-        margin-top: 20px;
+        margin-top: 0;
+        padding-left: 60px;
+        padding-right: 60px;
     }
     .body-content {
-        padding: 0;
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+}
+
+/* ---- Mobile: phones (max 767px) ---- */
+@media screen and (max-width: 767px) {
+
+    /* Jumbotron: stack logo above text, don't float it */
+    .jumbotron-logo {
+        float: none !important;
+        display: block;
+        width: 140px !important;
+        margin: 0 auto 16px auto;
+    }
+
+    /* Affiliation logos and section logos: stop floating, center them */
+    .affil-logo,
+    .section-logo {
+        float: none !important;
+        display: block;
+        margin: 0 auto 12px auto !important;
+    }
+
+    /* Photo strip: let photos wrap and shrink gracefully */
+    .photo-strip img {
+        height: 80px !important;
+        margin-bottom: 6px;
+    }
+
+    /* Weather widget: don't let it overflow */
+    .weatherwidget-io {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+
+    /* Form fields: stack all inline fields on mobile */
+    .field-inline {
+        display: block !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        margin-bottom: 8px;
+    }
+    .field-inline + label {
+        margin-top: 4px;
+    }
+
+    /* Tables: allow horizontal scroll instead of squishing */
+    .table-responsive-wrap {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    /* Jumbotron padding reduced on small screens */
+    .jumbotron {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .body-content {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    /* Buttons: full width on mobile for easier tapping */
+    .jumbotron .btn {
+        display: block;
+        width: 100%;
+        margin-bottom: 10px;
     }
 }

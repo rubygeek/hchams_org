@@ -1,248 +1,189 @@
-﻿<html>
-  <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Membership Form - HCARC KE5LOT</title>
   <link rel="stylesheet" href="Content/bootstrap.min.css" />
   <link rel="stylesheet" href="Content/Site.css" />
+</head>
+<body>
 
-  <head>
-    <meta charset="UTF-8" />
-    <title>HCARC Membership Form</title>
-  </head>
-  <body>
-    <div>
-      <h1>Hays-Caldwell Amateur Radio Club Membership Form</h1>
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#site-nav">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html">HCARC KE5LOT</a>
+      </div>
+      <div class="collapse navbar-collapse" id="site-nav">
+        <ul class="nav navbar-nav">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="About.html">About</a></li>
+          <li><a href="LearnMore.html">Learn More</a></li>
+          <li><a href="calendar.html">Calendar</a></li>
+          <li><a href="Contact.html">Contact</a></li>
+          <li class="active"><a href="ClubApplicationForm.pdf">Join Us</a></li>
+        </ul>
+      </div>
     </div>
-    <div>
+  </nav>
+
+  <div class="body-content">
+    <h1>Hays-Caldwell Amateur Radio Club — Membership Form</h1>
+
+    <div class="alert alert-info">
+      <strong>Prefer a printable form?</strong>
+      You can also <a href="ClubApplicationForm.pdf">download the PDF application</a>
+      and bring it to a meeting or mail it in.
+    </div>
+
+    <!-- Submits as an email via the user's mail client. -->
+    <!-- For a backend-free web form, replace the action with a Formspree endpoint. -->
+    <form action="mailto:baummeister@gmail.com" method="post" enctype="text/plain">
+
       <h2>Member Information</h2>
-      <asp:Panel BackColor="#ffff99" runat="server">
-        <asp:Label ID="Label1" runat="server" Text="Name:"></asp:Label>
-        <asp:TextBox ID="tbName" runat="server" Width="300"></asp:TextBox>
-        <p />
-        <asp:Label ID="Label2" runat="server" Text="Callsign:"></asp:Label>
-        <asp:TextBox ID="tbCallsign" runat="server"></asp:TextBox>
-        <asp:Label ID="Label3" runat="server" Text="Class:"></asp:Label>
-        <asp:TextBox ID="tbClass" runat="server"></asp:TextBox>
-        <p />
-        <asp:Label ID="Label4" runat="server" Text="Cell Phone:"></asp:Label>
-        <asp:TextBox ID="tbCellPhone" runat="server"></asp:TextBox>
-        <asp:Label ID="Label5" runat="server" Text="Home Phone:"></asp:Label>
-        <asp:TextBox ID="tbHomePhone" runat="server"></asp:TextBox>
-        <p />
-        <asp:Label ID="Label6" runat="server" Text="Email:"></asp:Label>
-        <asp:TextBox ID="tbEmail" runat="server" Width="300"></asp:TextBox>
-        <p />
-        <asp:Label
-          ID="Label7"
-          runat="server"
-          Text="Mailing Address:"
-        ></asp:Label>
-        <asp:TextBox ID="tbAddress" runat="server" Width="300"></asp:TextBox>
-        <p />
-        <asp:Label ID="Label8" runat="server" Text="City:"></asp:Label>
-        <asp:TextBox ID="tbCity" runat="server"></asp:TextBox>
-        <asp:Label ID="Label9" runat="server" Text="State:"></asp:Label>
-        <asp:TextBox ID="tbState" runat="server"></asp:TextBox>
-        <asp:Label ID="Label10" runat="server" Text="Zip:"></asp:Label>
-        <asp:TextBox ID="tbZip" runat="server" Width="75"></asp:TextBox>
-        <p />
-        <asp:Label
-          ID="Label11"
-          runat="server"
-          Text="Emergency Contact:"
-        ></asp:Label>
-        <asp:TextBox
-          ID="tbEmergencyContact"
-          runat="server"
-          Width="300"
-        ></asp:TextBox>
-      </asp:Panel>
-    </div>
-    <div>
-      <h2>Ham Radio Level of Interest</h2>
-      <asp:Panel BackColor="#ffff99" runat="server">
-        <asp:Label
-          ID="Label12"
-          runat="server"
-          Text="Are you a member of ARRL?"
-        ></asp:Label>
-        <asp:RadioButton
-          ID="rbARRLY"
-          runat="server"
-          Text="yes"
-          GroupName="ARRL"
-        />
-        <asp:RadioButton
-          ID="rbARRLN"
-          runat="server"
-          Text="no"
-          GroupName="ARRL"
-        />
-        <p />
-        <asp:Label
-          ID="Label13"
-          runat="server"
-          Text="What club activities are you willing to work on?"
-        ></asp:Label>
-        <p />
-        <asp:Table ID="Table1" runat="server">
-          <asp:TableRow>
-            <asp:TableCell Width="150px">
-              <asp:CheckBox
-                ID="cbFieldDay"
-                runat="server"
-                Text="Field Day"
-                TextAlign="Left"
-              />
-            </asp:TableCell>
-            <asp:TableCell Width="225px">
-              <asp:CheckBox
-                ID="cbSocial"
-                runat="server"
-                Text="Social Activities"
-                TextAlign="Left"
-              />
-            </asp:TableCell>
-            <asp:TableCell Width="220px">
-              <asp:CheckBox
-                ID="cbInstruct"
-                runat="server"
-                Text="Instruct Radio Classes"
-                TextAlign="Left"
-              />
-            </asp:TableCell>
-          </asp:TableRow>
-          <asp:TableRow>
-            <asp:TableCell>
-              <asp:CheckBox
-                ID="cbOfficer"
-                runat="server"
-                Text="Club Officer"
-                TextAlign="Left"
-              />
-            </asp:TableCell>
-            <asp:TableCell>
-              <asp:CheckBox
-                ID="cbPresent"
-                runat="server"
-                Text="Present a program at meeting"
-                TextAlign="Left"
-              />
-            </asp:TableCell>
-          </asp:TableRow>
-          <asp:TableRow>
-            <asp:TableCell>
-              <asp:CheckBox
-                ID="cbARES"
-                runat="server"
-                Text="ARES"
-                TextAlign="Left"
-              />
-            </asp:TableCell>
-            <asp:TableCell ColumnSpan="2">
-              <asp:Label ID="Label14" runat="server" Text="Other:"></asp:Label>
+      <div style="background-color: #ffff99; padding: 15px; border-radius: 4px; margin-bottom: 20px;">
 
-              <asp:TextBox
-                ID="tbOther"
-                runat="server"
-                Width="300"
-              ></asp:TextBox>
-            </asp:TableCell>
-          </asp:TableRow>
-        </asp:Table>
-      </asp:Panel>
+        <div class="form-group">
+          <label for="tbName">Name:</label>
+          <input type="text" id="tbName" name="Name" class="form-control" style="max-width: 400px;" />
+        </div>
+
+        <div class="row">
+          <div class="col-xs-6 col-sm-4">
+            <div class="form-group">
+              <label for="tbCallsign">Callsign:</label>
+              <input type="text" id="tbCallsign" name="Callsign" class="form-control" />
+            </div>
+          </div>
+          <div class="col-xs-6 col-sm-4">
+            <div class="form-group">
+              <label for="tbClass">License Class:</label>
+              <input type="text" id="tbClass" name="LicenseClass" class="form-control" />
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-xs-12 col-sm-5">
+            <div class="form-group">
+              <label for="tbCellPhone">Cell Phone:</label>
+              <input type="tel" id="tbCellPhone" name="CellPhone" class="form-control" />
+            </div>
+          </div>
+          <div class="col-xs-12 col-sm-5">
+            <div class="form-group">
+              <label for="tbHomePhone">Home Phone:</label>
+              <input type="tel" id="tbHomePhone" name="HomePhone" class="form-control" />
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="tbEmail">Email:</label>
+          <input type="email" id="tbEmail" name="Email" class="form-control" style="max-width: 400px;" />
+        </div>
+
+        <div class="form-group">
+          <label for="tbAddress">Mailing Address:</label>
+          <input type="text" id="tbAddress" name="Address" class="form-control" style="max-width: 400px;" />
+        </div>
+
+        <div class="row">
+          <div class="col-xs-12 col-sm-5">
+            <div class="form-group">
+              <label for="tbCity">City:</label>
+              <input type="text" id="tbCity" name="City" class="form-control" />
+            </div>
+          </div>
+          <div class="col-xs-4 col-sm-2">
+            <div class="form-group">
+              <label for="tbState">State:</label>
+              <input type="text" id="tbState" name="State" class="form-control" />
+            </div>
+          </div>
+          <div class="col-xs-8 col-sm-3">
+            <div class="form-group">
+              <label for="tbZip">Zip:</label>
+              <input type="text" id="tbZip" name="Zip" class="form-control" />
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="tbEmergencyContact">Emergency Contact:</label>
+          <input type="text" id="tbEmergencyContact" name="EmergencyContact" class="form-control" style="max-width: 400px;" />
+        </div>
+
+      </div>
+
+      <h2>Ham Radio Level of Interest</h2>
+      <div style="background-color: #ffff99; padding: 15px; border-radius: 4px; margin-bottom: 20px;">
+
+        <div class="form-group">
+          <label>Are you a member of ARRL?</label><br />
+          <label class="radio-inline"><input type="radio" name="ARRL" value="yes" /> Yes</label>
+          <label class="radio-inline"><input type="radio" name="ARRL" value="no" /> No</label>
+        </div>
+
+        <div class="form-group">
+          <label>What club activities are you willing to work on?</label><br />
+          <label class="checkbox-inline"><input type="checkbox" name="Activities" value="Field Day" /> Field Day</label>
+          <label class="checkbox-inline"><input type="checkbox" name="Activities" value="Social Activities" /> Social Activities</label>
+          <label class="checkbox-inline"><input type="checkbox" name="Activities" value="Instruct Radio Classes" /> Instruct Radio Classes</label>
+          <label class="checkbox-inline"><input type="checkbox" name="Activities" value="Club Officer" /> Club Officer</label>
+          <label class="checkbox-inline"><input type="checkbox" name="Activities" value="Present at Meeting" /> Present a Program at Meeting</label>
+          <label class="checkbox-inline"><input type="checkbox" name="Activities" value="ARES" /> ARES</label>
+        </div>
+
+        <div class="form-group">
+          <label for="tbOther">Other:</label>
+          <input type="text" id="tbOther" name="Other" class="form-control" style="max-width: 400px;" />
+        </div>
+
+      </div>
 
       <h2>Rig Information</h2>
-      <asp:Panel BackColor="#ffff99" runat="server">
-        <asp:Label
-          ID="Label15"
-          runat="server"
-          Text="Please indicate the radio equipment you have and are licensed to use:"
-        ></asp:Label>
-        <asp:Table ID="Table2" runat="server">
-          <asp:TableRow>
-            <asp:TableCell Width="150px">
-              <asp:CheckBox
-                ID="cbVHFHT"
-                runat="server"
-                Text="VHF Handheld"
-                TextAlign="Left"
-              />
-            </asp:TableCell>
-            <asp:TableCell Width="100px">
-              <asp:CheckBox
-                ID="cbVHFMobile"
-                runat="server"
-                Text="Mobile"
-                TextAlign="Left"
-              />
-            </asp:TableCell>
-            <asp:TableCell Width="100px">
-              <asp:CheckBox
-                ID="cbVHFBase"
-                runat="server"
-                Text="Base"
-                TextAlign="Left"
-              />
-            </asp:TableCell>
-          </asp:TableRow>
-          <asp:TableRow>
-            <asp:TableCell>
-              <asp:CheckBox
-                ID="cbUHFHT"
-                runat="server"
-                Text="UHF Handheld"
-                TextAlign="Left"
-              />
-            </asp:TableCell>
-            <asp:TableCell>
-              <asp:CheckBox
-                ID="cbUHFMobile"
-                runat="server"
-                Text="Mobile"
-                TextAlign="Left"
-              />
-            </asp:TableCell>
-            <asp:TableCell>
-              <asp:CheckBox
-                ID="cbUHFBase"
-                runat="server"
-                Text="Base"
-                TextAlign="Left"
-              />
-            </asp:TableCell>
-          </asp:TableRow>
-          <asp:TableRow>
-            <asp:TableCell ColumnSpan="3">
-              <asp:Label
-                ID="Label16"
-                runat="server"
-                Text="HF Brand/Model:"
-              ></asp:Label>
-              <asp:TextBox
-                ID="tbHFModel"
-                runat="server"
-                Width="300"
-              ></asp:TextBox>
-            </asp:TableCell>
-          </asp:TableRow>
-        </asp:Table>
-      </asp:Panel>
-    </div>
+      <div style="background-color: #ffff99; padding: 15px; border-radius: 4px; margin-bottom: 20px;">
 
-    <p />
-    <asp:Button
-      ID="btnSubmit"
-      runat="server"
-      OnClick="btnSubmit_Click"
-      Text="Submit"
-      Width="100"
-    />
-    <p />
-    Annual club dues are $15, payable at the start of each calendar year.
-    <p />
-    Please make check payable to "Hays-Caldwell Amateur Radio Club"
-    <p />
-    Or, you may use the PayPal to pay for your membership. Be sure to SUBMIT
-    (save) this form before returning to the home page!
-    <p />
-  </body>
+        <div class="form-group">
+          <label>Please indicate the radio equipment you have and are licensed to use:</label><br />
+          <label class="checkbox-inline"><input type="checkbox" name="Rig" value="VHF Handheld" /> VHF Handheld</label>
+          <label class="checkbox-inline"><input type="checkbox" name="Rig" value="VHF Mobile" /> VHF Mobile</label>
+          <label class="checkbox-inline"><input type="checkbox" name="Rig" value="VHF Base" /> VHF Base</label>
+          <label class="checkbox-inline"><input type="checkbox" name="Rig" value="UHF Handheld" /> UHF Handheld</label>
+          <label class="checkbox-inline"><input type="checkbox" name="Rig" value="UHF Mobile" /> UHF Mobile</label>
+          <label class="checkbox-inline"><input type="checkbox" name="Rig" value="UHF Base" /> UHF Base</label>
+        </div>
+
+        <div class="form-group">
+          <label for="tbHFModel">HF Brand/Model:</label>
+          <input type="text" id="tbHFModel" name="HFModel" class="form-control" style="max-width: 400px;" />
+        </div>
+
+      </div>
+
+      <button type="submit" class="btn btn-primary">Submit</button>
+
+    </form>
+
+    <br />
+    <p>Annual club dues are $20, payable at the start of each calendar year.</p>
+    <p>Please make checks payable to <strong>"Hays-Caldwell Amateur Radio Club"</strong></p>
+    <p>Or pay online via PayPal from the <a href="index.html">home page</a>.</p>
+
+  </div>
+
+  <footer style="text-align: center;">
+    <p>&copy; 2025 - Hays-Caldwell Amateur Radio Club</p>
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</body>
 </html>

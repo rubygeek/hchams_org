@@ -1,24 +1,50 @@
-﻿<html>
-  <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Learn More - HCARC KE5LOT</title>
   <link rel="stylesheet" href="Content/bootstrap.min.css" />
   <link rel="stylesheet" href="Content/Site.css" />
+</head>
+<body>
 
-  <head>
-    <meta charset="UTF-8" />
-    <title>Learn More</title>
-  </head>
-  <body>
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#site-nav">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html">HCARC KE5LOT</a>
+      </div>
+      <div class="collapse navbar-collapse" id="site-nav">
+        <ul class="nav navbar-nav">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="About.html">About</a></li>
+          <li class="active"><a href="LearnMore.html">Learn More</a></li>
+          <li><a href="calendar.html">Calendar</a></li>
+          <li><a href="Contact.html">Contact</a></li>
+          <li><a href="ClubApplicationForm.pdf">Join Us</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="body-content">
     <h2>Hays-Caldwell Amateur Radio Club</h2>
     <h3>To learn more:</h3>
     <div class="jumbotron">
       <img
         src="Pictures/HCARCLogo.jpg"
-        style="float: left; margin-left: 10px; height: 100px"
+        class="section-logo" style="float: left; margin-left: 10px; height: 100px"
         alt="HCARC"
       />
       The Hays-Caldwell Amateur Radio Club is a two-county club for ham
       operators. We meet every third Saturday of each month at the
-      <a href="http://www.cityofkyle.com/library">Kyle Public Library</a> at
+      <strong>Kyle Public Safety Center</strong>, 1700 Kohlers Crossing, Kyle, TX 78640, at
       10:00 AM. Our club supports a variety of interests, including emergency
       communication (ARES, Red Cross, CERT, etc.), hams helping hams (Elmer's),
       and occasional social events. We partner with the Austin and Central Texas
@@ -26,10 +52,11 @@
       members with information and a helping hand. A PDF brochure with more
       information about the club can be found
       <a href="Content/HCARC_Brochure.pdf">here</a>. <br /><br />
+
       <h2>ARRL - American Radio Relay League</h2>
       <img
         src="Pictures/League_diamond_color_high.JPG"
-        style="float: left; margin-left: 10px; height: 100px"
+        class="section-logo" style="float: left; margin-left: 10px; height: 100px"
         alt="ARRL"
       />
       ARRL is the national association for Amateur Radio in the US. Founded in
@@ -37,23 +64,24 @@
       noncommercial organization of radio amateurs. ARRL numbers within its
       ranks the vast majority of active radio amateurs in the nation and has a
       proud history of achievement as the standard-bearer in amateur affairs.
-      ARRL’s underpinnings as Amateur Radio’s witness, partner and forum are
+      ARRL's underpinnings as Amateur Radio's witness, partner and forum are
       defined by five pillars: Public Service, Advocacy, Education, Technology,
-      and Membership. <br/><br/>
-	  For more information, click
-      <a href="http://arrl.org">here</a>. <br /><br />
+      and Membership. <br /><br />
+      For more information, click <a href="https://arrl.org">here</a>. <br /><br />
+
       <h2>ARES - Amateur Radio Emergency Service</h2>
       <img
         src="Pictures/240px-ARES_Color_Logo.png"
-        style="float: left; margin-left: 10px; height: 100px"
-        alt="HCARC"
+        class="section-logo" style="float: left; margin-left: 10px; height: 100px"
+        alt="ARES"
       />
       The Amateur Radio Emergency Service® (ARES) consists of licensed amateurs
       who have voluntarily registered their qualifications and equipment, with
       their local ARES leadership, for communications duty in the public service
       when disaster strikes. <br /><br />
-      For more information, click <a href="http://arrl.org/ares">here</a>.
+      For more information, click <a href="https://arrl.org/ares">here</a>.
       <br /><br />
+
       <h2>Central Texas Ham Council</h2>
       The Central Texas Ham Council consists of leaders of formal amateur radio
       organizations (clubs and groups) within a 100 mile radius of Austin,
@@ -62,5 +90,13 @@
       events such as multi-county bicycle race coordination and to share news
       that is of interest beyond the boundaries of a local club or organization.
     </div>
-  </body>
+  </div>
+
+  <footer style="text-align: center;">
+    <p>&copy; 2025 - Hays-Caldwell Amateur Radio Club</p>
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</body>
 </html>
