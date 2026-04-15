@@ -4,38 +4,27 @@ on:
   schedule:
     # Every 6 hours (midnight, 6am, noon, 6pm Central)
     - cron: '0 5,11,17,23 * * *'
-  workflow_dispatch:  # Lets you trigger it manually from GitHub too
+  workflow_dispatch:
 
 permissions:
   contents: write
-
-env:
-  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
 jobs:
   build-calendar:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repo
-        uses: actions/checkout@v4
-
-      - name: Set up Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '24'
-
-      - name: Install ical package
-        run: npm install ical
-
-      - name: Fetch latest and build events.json
+      - name: Checkout, build, and push
         run: |
-          git fetch origin
-          git reset --hard origin/main
+          # Clone repo using built-in token
+          git clone https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git repo
+          cd repo
+
+          # Install dependency and run build script
+          npm install ical
           node build-calendar.js
 
-      - name: Commit and push updated events.json
-        run: |
+          # Commit and push if events.json changed
           git config user.name  "GitHub Actions Bot"
           git config user.email "actions@github.com"
           git add generated/events.json
-          git diff --staged --quiet && echo "No changes, skipping." || (git commit -m "Auto-update calendar events [skip ci]" && git push)
+          git diff --staged --quiet && echo "No changes." || (git commit -m "Auto-update calendar events [skip ci]" && git push)
