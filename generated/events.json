@@ -1,4 +1,166 @@
 {
-  "generated": "2026-04-15T15:25:01.942Z",
-  "events": []
+  "generated": "2026-04-15T15:33:39.005Z",
+  "events": [
+    {
+      "title": "Monthly Meeting",
+      "start": "2020-01-18T10:00:00.000Z",
+      "end": "2020-01-18T12:00:00.000Z",
+      "description": "The Hays-Caldwell Amateur Radio Club meets on the third Saturday of every month (excluding December). Location: Kyle Police Department, 1700 Kohlers Crossing.\n\n.",
+      "location": "Kyle Police Department"
+    },
+    {
+      "title": "Tuesday Breakfast",
+      "start": "2021-05-11T11:00:00.000Z",
+      "end": "2021-05-11T13:00:00.000Z",
+      "description": "Tuesday Breakfast, Jaliscos Buda TX",
+      "location": "Jaliscos, Buda TX"
+    },
+    {
+      "title": "HCARC Weekly NET - W1BTB",
+      "start": "2022-12-06T19:30:00.000Z",
+      "end": "2022-12-06T20:00:00.000Z",
+      "description": "",
+      "location": "147.050 MHz, 114.8 tone, +offset"
+    },
+    {
+      "title": "HCARC Weekly NET — KA6J",
+      "start": "2022-12-13T19:30:00.000Z",
+      "end": "2022-12-13T20:00:00.000Z",
+      "description": "",
+      "location": ""
+    },
+    {
+      "title": "HCARC Weekly NET - W5GW",
+      "start": "2025-04-01T19:30:00.000Z",
+      "end": "2025-04-01T20:00:00.000Z",
+      "description": "",
+      "location": "147.050 MHz, 114.8 tone, +offset"
+    },
+    {
+      "title": "HCARC Weekly NET - NT5F",
+      "start": "2025-04-16T00:30:00.000Z",
+      "end": "2025-04-16T01:30:00.000Z",
+      "description": "",
+      "location": "147.050 MHz, 114.8 tone, +offset"
+    },
+    {
+      "title": "HCARC Weekly NET - KA6J",
+      "start": "2025-04-23T00:30:00.000Z",
+      "end": "2025-04-23T01:00:00.000Z",
+      "description": "",
+      "location": "147.050 MHz, 114.8 tone, +offset"
+    },
+    {
+      "title": "HCARC Weekly NET - W5GW",
+      "start": "2025-05-07T00:30:00.000Z",
+      "end": "2025-05-07T01:30:00.000Z",
+      "description": "",
+      "location": ""
+    },
+    {
+      "title": "HCARC Weekly NET - KD5MMM",
+      "start": "2025-05-14T00:30:00.000Z",
+      "end": "2025-05-14T01:00:00.000Z",
+      "description": "",
+      "location": ""
+    },
+    {
+      "title": "HCARC Weekly NET - NT5F",
+      "start": "2025-05-21T00:30:00.000Z",
+      "end": "2025-05-21T01:00:00.000Z",
+      "description": "",
+      "location": ""
+    },
+    {
+      "title": "HCARC Weekly NET - KA6J",
+      "start": "2025-05-28T00:30:00.000Z",
+      "end": "2025-05-28T01:00:00.000Z",
+      "description": "",
+      "location": ""
+    },
+    {
+      "title": "HCARC Weekly NET - W1BTB",
+      "start": "2025-06-04T00:30:00.000Z",
+      "end": "2025-06-04T01:00:00.000Z",
+      "description": "",
+      "location": ""
+    },
+    {
+      "title": "HCARC Weekly NET - W5GW",
+      "start": "2025-06-11T00:30:00.000Z",
+      "end": "2025-06-11T01:00:00.000Z",
+      "description": "",
+      "location": ""
+    },
+    {
+      "title": "HCARC Weekly NET - KD5MMM",
+      "start": "2025-06-18T00:30:00.000Z",
+      "end": "2025-06-18T01:00:00.000Z",
+      "description": "",
+      "location": ""
+    },
+    {
+      "title": "HCARC Weekly NET - NT5F",
+      "start": "2025-06-25T00:30:00.000Z",
+      "end": "2025-06-25T01:30:00.000Z",
+      "description": "",
+      "location": ""
+    },
+    {
+      "title": "HCARC Weekly NET - NT5F",
+      "start": "2025-09-03T00:30:00.000Z",
+      "end": "2025-09-03T01:00:00.000Z",
+      "description": "",
+      "location": ""
+    },
+    {
+      "title": "Swap Fest",
+      "start": "2025-11-08T16:00:00.000Z",
+      "end": "2025-11-08T19:00:00.000Z",
+      "description": "",
+      "location": "SW Christian Church, 2116 Lynnbrook Dr., Austin, TX 78748"
+    },
+    {
+      "title": "HCARC Weekly NET - KA6J",
+      "start": "2025-12-03T01:30:00.000Z",
+      "end": "2025-12-03T02:00:00.000Z",
+      "description": "",
+      "location": ""
+    },
+    {
+      "title": "Special Club Meeting",
+      "start": "2026-01-17T16:00:00.000Z",
+      "end": "2026-01-17T18:00:00.000Z",
+      "description": "",
+      "location": "Hays Co. EOC, 810 S Stagecoach Trail, San Marcos, TX 78666"
+    },
+    {
+      "title": "HCARC Weekly NET - W1BTB",
+      "start": "2026-04-08T00:30:00.000Z",
+      "end": "2026-04-08T01:00:00.000Z",
+      "description": "",
+      "location": ""
+    },
+    {
+      "title": "HCARC Weekly NET - W5GW",
+      "start": "2026-04-15T00:30:00.000Z",
+      "end": "2026-04-15T01:00:00.000Z",
+      "description": "",
+      "location": ""
+    },
+    {
+      "title": "HCARC Weekly NET - KD5MMM",
+      "start": "2026-04-22T00:30:00.000Z",
+      "end": "2026-04-22T01:00:00.000Z",
+      "description": "",
+      "location": ""
+    },
+    {
+      "title": "HCARC Weekly NET - KA6J",
+      "start": "2026-04-29T00:30:00.000Z",
+      "end": "2026-04-29T01:00:00.000Z",
+      "description": "",
+      "location": ""
+    }
+  ]
 }
