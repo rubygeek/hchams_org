@@ -72,12 +72,37 @@
   </div>
 
   <div class="body-content">
-    <div id="calendar"></div>
-    <div id="calendar-error" class="alert alert-warning">
+
+    <!-- =========================================================
+         OPTION A: groups.io iframe embed (simplest — try this first).
+         If it shows a blank box or login screen, delete this block
+         and use Option B below instead.
+    ========================================================= -->
+    <div id="iframe-calendar">
+      <iframe
+        src="https://groups.io/g/hchams/calendar"
+        width="100%"
+        height="650"
+        frameborder="0"
+        style="border: 1px solid #ccc; border-radius: 4px;">
+      </iframe>
+      <p style="margin-top:8px; font-size:13px; color:#666;">
+        Not displaying? <a href="https://groups.io/g/hchams/calendar" target="_blank">View on Groups.io directly</a>.
+      </p>
+    </div>
+
+    <!-- =========================================================
+         OPTION B: FullCalendar fed from the ICS feed via JS proxy.
+         To use this instead: delete the iframe block above and
+         remove the "display:none" style from this div.
+    ========================================================= -->
+    <div id="calendar" style="display:none;"></div>
+    <div id="calendar-error" class="alert alert-warning" style="display:none;">
       <strong>Could not load calendar events.</strong>
       You can view them directly on
       <a href="https://groups.io/g/hchams/calendar" target="_blank">Groups.io</a>.
     </div>
+
   </div>
 
   <footer style="text-align: center;">
