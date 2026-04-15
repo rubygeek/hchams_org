@@ -24,12 +24,15 @@ jobs:
       - name: Install ical package
         run: npm install ical
 
-      - name: Fetch events and build events.json
-        run: node build-calendar.js
+      - name: Fetch latest and build events.json
+        run: |
+          git fetch origin
+          git reset --hard origin/main
+          node build-calendar.js
 
       - name: Commit and push updated events.json
         run: |
           git config user.name  "GitHub Actions Bot"
           git config user.email "actions@github.com"
           git add generated/events.json
-          git diff --staged --quiet && echo "No changes." || (git commit -m "Auto-update calendar events [skip ci]" && git pull --rebase && git push)
+          git diff --staged --quiet && echo "No changes, skipping." || (git commit -m "Auto-update calendar events [skip ci]" && git push)
