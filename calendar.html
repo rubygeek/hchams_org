@@ -53,18 +53,28 @@
       margin-top: 20px;
     }
 
-    /* Event detail popup */
+    /* Dimmed backdrop behind popup */
+    #event-popup-backdrop {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.45);
+      z-index: 9998;
+    }
+
+    /* Event detail popup — centered on screen */
     #event-popup {
       display: none;
       position: fixed;
-      bottom: 20px;
+      top: 50%;
       left: 50%;
-      transform: translateX(-50%);
+      transform: translate(-50%, -50%);
       width: 90%;
       max-width: 420px;
       background: #fff;
       border-radius: 8px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+      box-shadow: 0 8px 32px rgba(0,0,0,0.4);
       z-index: 9999;
       overflow: hidden;
     }
@@ -142,11 +152,14 @@
     </p>
   </div>
 
+  <!-- Backdrop — tap to close popup -->
+  <div id="event-popup-backdrop" onclick="closePopup()"></div>
+
   <!-- Event detail popup (replaces browser alert on mobile) -->
   <div id="event-popup">
     <div id="event-popup-header">
       <span id="event-popup-title"></span>
-      <button id="event-popup-close" onclick="document.getElementById('event-popup').style.display='none'">&times;</button>
+      <button id="event-popup-close" onclick="closePopup()">&times;</button>
     </div>
     <div id="event-popup-body"></div>
   </div>
@@ -168,6 +181,11 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.10/index.global.js"></script>
 <script>
+    function closePopup() {
+      document.getElementById('event-popup').style.display = 'none';
+      document.getElementById('event-popup-backdrop').style.display = 'none';
+    }
+
     document.addEventListener('DOMContentLoaded', function () {
       var calendarEl = document.getElementById('calendar');
 
@@ -215,6 +233,7 @@
 
           body.innerHTML = html || '<p>No additional details.</p>';
           popup.style.display = 'block';
+          document.getElementById('event-popup-backdrop').style.display = 'block';
         },
         noEventsContent: 'No upcoming events found.'
       });
