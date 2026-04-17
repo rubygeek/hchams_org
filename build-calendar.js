@@ -4,13 +4,11 @@
  * Run manually:  node build-calendar.js
  * Run via CI:    GitHub Actions (.github/workflows/update-calendar.yml) does this daily.
  *
- * The ical library returns Date objects whose UTC values represent the local
- * wall-clock time for TZID=America/Chicago events (i.e. the UTC offset is
- * ignored and the clock digits are preserved). So we format them by reading
- * the UTC digits directly — no timezone conversion needed.
- * Events already stored as UTC (ending in Z) are converted to Chicago local
- * time before storing, so FullCalendar (timeZone:'America/Chicago') displays
- * everything correctly.
+ * The ical library stores TZID=America/Chicago times as Date objects where
+ * the UTC digits equal the local wall-clock time (e.g. 10:00 Chicago → getUTCHours()===10).
+ * True UTC times (Z suffix) have e.start.tz === undefined.
+ * We store all times as "YYYY-MM-DDTHH:MM:SS" (no Z) so FullCalendar with
+ * timeZone:'America/Chicago' displays them correctly.
  */
 
 const https   = require('https');
@@ -27,12 +25,10 @@ if (!fs.existsSync(OUTPUT_DIR)) {
 }
 
 /**
- * Format a Date as a local wall-clock string by reading its UTC digits.
- * The ical library stores TZID-qualified times this way:
- *   DTSTART;TZID=America/Chicago:20200118T100000  →  Date where getUTC*() returns 10:00
- * So we just read the UTC digits and format them directly.
+ * Read UTC digits directly from a Date — used for TZID-qualified events.
+ * The ical library stores "10:00 Chicago" as a Date where getUTCHours()===10.
  */
-function wallClockFromUTCDigits(date) {
+function wallClockString(date) {
     const yyyy = date.getUTCFullYear();
     const mm   = String(date.getUTCMonth() + 1).padStart(2, '0');
     const dd   = String(date.getUTCDate()).padStart(2, '0');
@@ -44,7 +40,7 @@ function wallClockFromUTCDigits(date) {
 
 /**
  * Convert a true UTC Date to America/Chicago local wall-clock string.
- * Used for events whose DTSTART ends in Z (genuinely UTC).
+ * Used for events whose DTSTART ends in Z (genuinely UTC, e.g. NET events).
  */
 function utcToChicago(date) {
     const fmt = new Intl.DateTimeFormat('en-US', {
@@ -59,23 +55,8 @@ function utcToChicago(date) {
     return `${parts.year}-${parts.month}-${parts.day}T${h}:${parts.minute}:${parts.second}`;
 }
 
-/**
- * Detect whether an ICS event's DTSTART is a true UTC value (ends in Z).
- * The ical library sets e.start.toISOString() ending in .000Z for both cases,
- * but sets e.start.tzid to the timezone string when TZID= is present.
- */
-function isRealUTC(e) {
-    // If the ical library found a TZID, it's a local time stored as UTC digits
-    if (e.start && e.start.tzid) return false;
-    // If there's no tzid, check the raw ical string if available
-    if (e.start && e.start.val && typeof e.start.val === 'string') {
-        return e.start.val.endsWith('Z');
-    }
-    return false;
-}
-
-function formatStart(date, useUTCDigits) {
-    return useUTCDigits ? wallClockFromUTCDigits(date) : utcToChicago(date);
+function toLocalString(date, hasTZ) {
+    return hasTZ ? wallClockString(date) : utcToChicago(date);
 }
 
 function fetchICS(url, redirectCount = 0) {
@@ -129,48 +110,30 @@ async function main() {
             ? (new Date(e.end) - new Date(e.start))
             : 0;
 
-        // TZID-qualified events: ical stores wall-clock time in UTC digits
-        // True UTC events (Z suffix): need to convert to Chicago local time
-        const hasTZID = !!(e.start && e.start.tzid);
+        // e.start.tz is set when DTSTART has TZID= — wall clock digits are in UTC position
+        // e.start.tz is undefined when DTSTART ends in Z — genuinely UTC, needs conversion
+        const hasTZ = !!(e.start && e.start.tz);
+        console.log(`  "${e.summary}" hasTZ=${hasTZ} tz=${e.start && e.start.tz}`);
 
         if (e.rrule) {
-            // Recurring event — expand all occurrences within range
-            // rrule.between() returns dates with same wall-clock-in-UTC-digits behaviour
             const occurrences = e.rrule.between(rangeStart, rangeEnd, true);
             occurrences.forEach(date => {
-                const startStr = hasTZID
-                    ? wallClockFromUTCDigits(date)
-                    : utcToChicago(date);
-                const endStr = duration
-                    ? (hasTZID
-                        ? wallClockFromUTCDigits(new Date(date.getTime() + duration))
-                        : utcToChicago(new Date(date.getTime() + duration)))
-                    : null;
                 events.push({
                     title:       e.summary     || 'Club Event',
-                    start:       startStr,
-                    end:         endStr,
+                    start:       toLocalString(date, hasTZ),
+                    end:         duration ? toLocalString(new Date(date.getTime() + duration), hasTZ) : null,
                     description: e.description || '',
                     location:    e.location    || ''
                 });
             });
         } else {
-            // Single event — include if within range
             try {
                 const start = new Date(e.start);
                 if (start >= rangeStart) {
-                    const startStr = hasTZID
-                        ? wallClockFromUTCDigits(start)
-                        : utcToChicago(start);
-                    const endStr = e.end
-                        ? (hasTZID
-                            ? wallClockFromUTCDigits(new Date(e.end))
-                            : utcToChicago(new Date(e.end)))
-                        : null;
                     events.push({
                         title:       e.summary     || 'Club Event',
-                        start:       startStr,
-                        end:         endStr,
+                        start:       toLocalString(start, hasTZ),
+                        end:         e.end ? toLocalString(new Date(e.end), hasTZ) : null,
                         description: e.description || '',
                         location:    e.location    || ''
                     });
