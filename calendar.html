@@ -196,7 +196,6 @@
           center: 'title',
           right: 'dayGridMonth,timeGridWeek,listMonth'
         },
-        timeZone: 'America/Chicago',
         height: 'auto',
         eventClick: function (info) {
           var e      = info.event;
@@ -218,18 +217,10 @@
           var html = '';
           var start = e.start;
           if (start) {
-            var dateStr = start.toLocaleDateString('en-US', {
-              weekday: 'long', month: 'long', day: 'numeric', year: 'numeric',
-              timeZone: 'America/Chicago'
-            });
-            var timeStr = start.toLocaleTimeString('en-US', {
-              hour: '2-digit', minute: '2-digit',
-              timeZone: 'America/Chicago',
-              timeZoneName: 'short'
-            });
+            var dateStr = start.toLocaleDateString('en-US', { weekday:'long', month:'long', day:'numeric', year:'numeric' });
+            var timeStr = start.toLocaleTimeString('en-US', { hour:'2-digit', minute:'2-digit' });
             html += '<p><span class="label">📅 Date:</span> ' + dateStr + '</p>';
-            // Hide time for all-day events (FullCalendar gives them midnight UTC)
-            if (!e.allDay) {
+            if (timeStr !== '12:00 AM') {
               html += '<p><span class="label">🕐 Time:</span> ' + timeStr + '</p>';
             }
           }
