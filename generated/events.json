@@ -1,5 +1,5 @@
 {
-  "generated": "2026-04-17T05:43:24.781Z",
+  "generated": "2026-04-17T11:18:44.923Z",
   "events": [
     {
       "title": "Monthly Meeting",
@@ -861,6 +861,13 @@
       "end": "2027-04-13T20:00:00.000Z",
       "description": "",
       "location": ""
+    },
+    {
+      "title": "Monthly Meeting",
+      "start": "2027-04-17T10:00:00.000Z",
+      "end": "2027-04-17T12:00:00.000Z",
+      "description": "The Hays-Caldwell Amateur Radio Club meets on the third Saturday of every month (excluding December). Location: Kyle Police Department, 1700 Kohlers Crossing.\n\n.",
+      "location": "Kyle Police Department"
     }
   ]
 }
