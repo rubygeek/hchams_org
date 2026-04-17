@@ -3,6 +3,9 @@
  * Fetches the groups.io ICS feed and writes generated/events.json.
  * Run manually:  node build-calendar.js
  * Run via CI:    GitHub Actions (.github/workflows/update-calendar.yml) does this daily.
+ *
+ * Times are stored as America/Chicago local wall-clock strings (no Z suffix)
+ * so FullCalendar can display them correctly with timeZone:'America/Chicago'.
  */
 
 const https   = require('https');
@@ -16,6 +19,27 @@ const OUT_FILE   = path.join(OUTPUT_DIR, 'events.json');
 
 if (!fs.existsSync(OUTPUT_DIR)) {
     fs.mkdirSync(OUTPUT_DIR, { recursive: true });
+}
+
+/**
+ * Convert a Date object to a local wall-clock string in America/Chicago,
+ * formatted as "YYYY-MM-DDTHH:MM:SS" (no Z, no offset).
+ * FullCalendar with timeZone:'America/Chicago' will interpret this correctly,
+ * automatically handling CDT vs CST depending on the date.
+ */
+function toChicagoLocalString(date) {
+    // Use Intl to get each part in Chicago time
+    const fmt = new Intl.DateTimeFormat('en-US', {
+        timeZone: 'America/Chicago',
+        year: 'numeric', month: '2-digit', day: '2-digit',
+        hour: '2-digit', minute: '2-digit', second: '2-digit',
+        hour12: false
+    });
+    const parts = {};
+    fmt.formatToParts(date).forEach(p => { if (p.type !== 'literal') parts[p.type] = p.value; });
+    // hour12:false can give '24' for midnight — normalize to '00'
+    const h = parts.hour === '24' ? '00' : parts.hour;
+    return `${parts.year}-${parts.month}-${parts.day}T${h}:${parts.minute}:${parts.second}`;
 }
 
 function fetchICS(url, redirectCount = 0) {
@@ -75,8 +99,8 @@ async function main() {
             occurrences.forEach(date => {
                 events.push({
                     title:       e.summary     || 'Club Event',
-                    start:       date.toISOString(),
-                    end:         duration ? new Date(date.getTime() + duration).toISOString() : null,
+                    start:       toChicagoLocalString(date),
+                    end:         duration ? toChicagoLocalString(new Date(date.getTime() + duration)) : null,
                     description: e.description || '',
                     location:    e.location    || ''
                 });
@@ -88,8 +112,8 @@ async function main() {
                 if (start >= rangeStart) {
                     events.push({
                         title:       e.summary     || 'Club Event',
-                        start:       start.toISOString(),
-                        end:         e.end ? new Date(e.end).toISOString() : null,
+                        start:       toChicagoLocalString(start),
+                        end:         e.end ? toChicagoLocalString(new Date(e.end)) : null,
                         description: e.description || '',
                         location:    e.location    || ''
                     });
