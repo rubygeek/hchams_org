@@ -196,6 +196,7 @@
           center: 'title',
           right: 'dayGridMonth,timeGridWeek,listMonth'
         },
+        timeZone: 'America/Chicago',
         height: 'auto',
         eventClick: function (info) {
           var e      = info.event;
@@ -213,15 +214,17 @@
 
           title.textContent = e.title;
 
-          // Build body content
+          // Build body content — read time from extendedProps.startStr (local wall-clock)
+          // since e.start is a Date object that FullCalendar adjusts for timezone
           var html = '';
-          var start = e.start;
-          if (start) {
-            var dateStr = start.toLocaleDateString('en-US', { weekday:'long', month:'long', day:'numeric', year:'numeric' });
-            var timeStr = start.toLocaleTimeString('en-US', { hour:'2-digit', minute:'2-digit' });
+          var startStr = props.startStr; // "2026-04-18T10:00:00" — no Z, already Central
+          if (startStr) {
+            var dt = new Date(startStr + 'Z'); // parse as UTC so digits are preserved
+            var dateStr = dt.toLocaleDateString('en-US', { weekday:'long', month:'long', day:'numeric', year:'numeric', timeZone:'UTC' });
+            var timeStr = dt.toLocaleTimeString('en-US', { hour:'2-digit', minute:'2-digit', timeZone:'UTC' });
             html += '<p><span class="label">📅 Date:</span> ' + dateStr + '</p>';
-            if (timeStr !== '12:00 AM') {
-              html += '<p><span class="label">🕐 Time:</span> ' + timeStr + '</p>';
+            if (!e.allDay) {
+              html += '<p><span class="label">🕐 Time:</span> ' + timeStr + ' CT</p>';
             }
           }
           if (props.location) {
@@ -260,7 +263,8 @@
               className: className,
               extendedProps: {
                 description: e.description || '',
-                location:    e.location    || ''
+                location:    e.location    || '',
+                startStr:    e.start       || ''
               }
             };
           });
