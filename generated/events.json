@@ -1,13 +1,6 @@
 {
-  "generated": "2026-04-20T05:52:20.513Z",
+  "generated": "2026-04-20T11:29:48.543Z",
   "events": [
-    {
-      "title": "Monthly Meeting",
-      "start": "2026-03-21T10:00:00",
-      "end": "2026-03-21T12:00:00",
-      "description": "The Hays-Caldwell Amateur Radio Club meets on the third Saturday of every month (excluding December). Location: Kyle Police Department, 1700 Kohlers Crossing.\n\n.",
-      "location": "Kyle Police Department"
-    },
     {
       "title": "Tuesday Breakfast",
       "start": "2026-03-24T11:00:00",
@@ -868,6 +861,13 @@
       "end": "2027-04-17T12:00:00",
       "description": "The Hays-Caldwell Amateur Radio Club meets on the third Saturday of every month (excluding December). Location: Kyle Police Department, 1700 Kohlers Crossing.\n\n.",
       "location": "Kyle Police Department"
+    },
+    {
+      "title": "Tuesday Breakfast",
+      "start": "2027-04-20T11:00:00",
+      "end": "2027-04-20T13:00:00",
+      "description": "Tuesday Breakfast, Jaliscos Buda TX",
+      "location": "Jaliscos, Buda TX"
     }
   ]
 }
