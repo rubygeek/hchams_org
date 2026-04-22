@@ -56,8 +56,9 @@ function utcToChicago(date) {
 }
 
 function toLocalString(date, hasTZ) {
-    return wallClockString(date);
+    return hasTZ ? wallClockString(date) : utcToChicago(date);
 }
+
 
 function fetchICS(url, redirectCount = 0) {
     if (redirectCount > 5) return Promise.reject(new Error('Too many redirects'));
