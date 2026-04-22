@@ -1,5 +1,5 @@
 {
-  "generated": "2026-04-22T01:48:16.574Z",
+  "generated": "2026-04-22T01:51:29.125Z",
   "events": [
     {
       "title": "Tuesday Breakfast",
@@ -24,8 +24,8 @@
     },
     {
       "title": "HCARC Weekly NET - W1BTB",
-      "start": "2026-04-07T19:30:00",
-      "end": "2026-04-07T20:00:00",
+      "start": "2026-04-08T00:30:00",
+      "end": "2026-04-08T01:00:00",
       "description": "",
       "location": ""
     },
@@ -38,8 +38,8 @@
     },
     {
       "title": "HCARC Weekly NET - W5GW",
-      "start": "2026-04-14T19:30:00",
-      "end": "2026-04-14T20:00:00",
+      "start": "2026-04-15T00:30:00",
+      "end": "2026-04-15T01:00:00",
       "description": "",
       "location": ""
     },
@@ -59,14 +59,14 @@
     },
     {
       "title": "HCARC Weekly NET - KD5MMM",
-      "start": "2026-04-21T19:30:00",
-      "end": "2026-04-21T20:00:00",
+      "start": "2026-04-22T00:30:00",
+      "end": "2026-04-22T01:00:00",
       "description": "",
       "location": ""
     },
     {
       "title": "Discord Virtual Lunch",
-      "start": "2026-04-22T19:00:00",
+      "start": "2026-04-23T00:00:00",
       "end": null,
       "description": "Join use for a Virtual Lunch on the Club Discord\n\nhttps://discord.gg/8jsvXNvPC",
       "location": "Club Discord"
@@ -80,7 +80,7 @@
     },
     {
       "title": "Discord Virtual Lunch",
-      "start": "2026-04-29T19:00:00",
+      "start": "2026-04-30T00:00:00",
       "end": null,
       "description": "Join use for a Virtual Lunch on the Club Discord\n\nhttps://discord.gg/8jsvXNvPC",
       "location": "Club Discord"
@@ -101,7 +101,7 @@
     },
     {
       "title": "Discord Virtual Lunch",
-      "start": "2026-05-06T19:00:00",
+      "start": "2026-05-07T00:00:00",
       "end": null,
       "description": "Join use for a Virtual Lunch on the Club Discord\n\nhttps://discord.gg/8jsvXNvPC",
       "location": "Club Discord"
@@ -122,7 +122,7 @@
     },
     {
       "title": "Discord Virtual Lunch",
-      "start": "2026-05-13T19:00:00",
+      "start": "2026-05-14T00:00:00",
       "end": null,
       "description": "Join use for a Virtual Lunch on the Club Discord\n\nhttps://discord.gg/8jsvXNvPC",
       "location": "Club Discord"
@@ -150,7 +150,7 @@
     },
     {
       "title": "Discord Virtual Lunch",
-      "start": "2026-05-20T19:00:00",
+      "start": "2026-05-21T00:00:00",
       "end": null,
       "description": "Join use for a Virtual Lunch on the Club Discord\n\nhttps://discord.gg/8jsvXNvPC",
       "location": "Club Discord"
@@ -171,7 +171,7 @@
     },
     {
       "title": "Discord Virtual Lunch",
-      "start": "2026-05-27T19:00:00",
+      "start": "2026-05-28T00:00:00",
       "end": null,
       "description": "Join use for a Virtual Lunch on the Club Discord\n\nhttps://discord.gg/8jsvXNvPC",
       "location": "Club Discord"
@@ -192,7 +192,7 @@
     },
     {
       "title": "Discord Virtual Lunch",
-      "start": "2026-06-03T19:00:00",
+      "start": "2026-06-04T00:00:00",
       "end": null,
       "description": "Join use for a Virtual Lunch on the Club Discord\n\nhttps://discord.gg/8jsvXNvPC",
       "location": "Club Discord"
@@ -206,7 +206,7 @@
     },
     {
       "title": "Discord Virtual Lunch",
-      "start": "2026-06-10T19:00:00",
+      "start": "2026-06-11T00:00:00",
       "end": null,
       "description": "Join use for a Virtual Lunch on the Club Discord\n\nhttps://discord.gg/8jsvXNvPC",
       "location": "Club Discord"
@@ -220,7 +220,7 @@
     },
     {
       "title": "Discord Virtual Lunch",
-      "start": "2026-06-17T19:00:00",
+      "start": "2026-06-18T00:00:00",
       "end": null,
       "description": "Join use for a Virtual Lunch on the Club Discord\n\nhttps://discord.gg/8jsvXNvPC",
       "location": "Club Discord"
@@ -241,15 +241,15 @@
     },
     {
       "title": "Discord Virtual Lunch",
-      "start": "2026-06-24T19:00:00",
+      "start": "2026-06-25T00:00:00",
       "end": null,
       "description": "Join use for a Virtual Lunch on the Club Discord\n\nhttps://discord.gg/8jsvXNvPC",
       "location": "Club Discord"
     },
     {
       "title": "Field Day",
-      "start": "2026-06-27T10:00:00",
-      "end": "2026-06-27T19:00:00",
+      "start": "2026-06-27T15:00:00",
+      "end": "2026-06-28T00:00:00",
       "description": "",
       "location": ""
     },
@@ -262,7 +262,7 @@
     },
     {
       "title": "Discord Virtual Lunch",
-      "start": "2026-07-01T19:00:00",
+      "start": "2026-07-02T00:00:00",
       "end": null,
       "description": "Join use for a Virtual Lunch on the Club Discord\n\nhttps://discord.gg/8jsvXNvPC",
       "location": "Club Discord"
@@ -276,7 +276,7 @@
     },
     {
       "title": "Discord Virtual Lunch",
-      "start": "2026-07-08T19:00:00",
+      "start": "2026-07-09T00:00:00",
       "end": null,
       "description": "Join use for a Virtual Lunch on the Club Discord\n\nhttps://discord.gg/8jsvXNvPC",
       "location": "Club Discord"
@@ -290,7 +290,7 @@
     },
     {
       "title": "Discord Virtual Lunch",
-      "start": "2026-07-15T19:00:00",
+      "start": "2026-07-16T00:00:00",
       "end": null,
       "description": "Join use for a Virtual Lunch on the Club Discord\n\nhttps://discord.gg/8jsvXNvPC",
       "location": "Club Discord"
@@ -311,7 +311,7 @@
     },
     {
       "title": "Discord Virtual Lunch",
-      "start": "2026-07-22T19:00:00",
+      "start": "2026-07-23T00:00:00",
       "end": null,
       "description": "Join use for a Virtual Lunch on the Club Discord\n\nhttps://discord.gg/8jsvXNvPC",
       "location": "Club Discord"
@@ -325,7 +325,7 @@
     },
     {
       "title": "Discord Virtual Lunch",
-      "start": "2026-07-29T19:00:00",
+      "start": "2026-07-30T00:00:00",
       "end": null,
       "description": "Join use for a Virtual Lunch on the Club Discord\n\nhttps://discord.gg/8jsvXNvPC",
       "location": "Club Discord"
@@ -339,7 +339,7 @@
     },
     {
       "title": "Discord Virtual Lunch",
-      "start": "2026-08-05T19:00:00",
+      "start": "2026-08-06T00:00:00",
       "end": null,
       "description": "Join use for a Virtual Lunch on the Club Discord\n\nhttps://discord.gg/8jsvXNvPC",
       "location": "Club Discord"
@@ -353,7 +353,7 @@
     },
     {
       "title": "Discord Virtual Lunch",
-      "start": "2026-08-12T19:00:00",
+      "start": "2026-08-13T00:00:00",
       "end": null,
       "description": "Join use for a Virtual Lunch on the Club Discord\n\nhttps://discord.gg/8jsvXNvPC",
       "location": "Club Discord"
@@ -374,7 +374,7 @@
     },
     {
       "title": "Discord Virtual Lunch",
-      "start": "2026-08-19T19:00:00",
+      "start": "2026-08-20T00:00:00",
       "end": null,
       "description": "Join use for a Virtual Lunch on the Club Discord\n\nhttps://discord.gg/8jsvXNvPC",
       "location": "Club Discord"
@@ -388,7 +388,7 @@
     },
     {
       "title": "Discord Virtual Lunch",
-      "start": "2026-08-26T19:00:00",
+      "start": "2026-08-27T00:00:00",
       "end": null,
       "description": "Join use for a Virtual Lunch on the Club Discord\n\nhttps://discord.gg/8jsvXNvPC",
       "location": "Club Discord"
@@ -402,7 +402,7 @@
     },
     {
       "title": "Discord Virtual Lunch",
-      "start": "2026-09-02T19:00:00",
+      "start": "2026-09-03T00:00:00",
       "end": null,
       "description": "Join use for a Virtual Lunch on the Club Discord\n\nhttps://discord.gg/8jsvXNvPC",
       "location": "Club Discord"
@@ -416,7 +416,7 @@
     },
     {
       "title": "Discord Virtual Lunch",
-      "start": "2026-09-09T19:00:00",
+      "start": "2026-09-10T00:00:00",
       "end": null,
       "description": "Join use for a Virtual Lunch on the Club Discord\n\nhttps://discord.gg/8jsvXNvPC",
       "location": "Club Discord"
@@ -430,7 +430,7 @@
     },
     {
       "title": "Discord Virtual Lunch",
-      "start": "2026-09-16T19:00:00",
+      "start": "2026-09-17T00:00:00",
       "end": null,
       "description": "Join use for a Virtual Lunch on the Club Discord\n\nhttps://discord.gg/8jsvXNvPC",
       "location": "Club Discord"
@@ -451,7 +451,7 @@
     },
     {
       "title": "Discord Virtual Lunch",
-      "start": "2026-09-23T19:00:00",
+      "start": "2026-09-24T00:00:00",
       "end": null,
       "description": "Join use for a Virtual Lunch on the Club Discord\n\nhttps://discord.gg/8jsvXNvPC",
       "location": "Club Discord"
@@ -465,7 +465,7 @@
     },
     {
       "title": "Discord Virtual Lunch",
-      "start": "2026-09-30T19:00:00",
+      "start": "2026-10-01T00:00:00",
       "end": null,
       "description": "Join use for a Virtual Lunch on the Club Discord\n\nhttps://discord.gg/8jsvXNvPC",
       "location": "Club Discord"
@@ -479,7 +479,7 @@
     },
     {
       "title": "Discord Virtual Lunch",
-      "start": "2026-10-07T19:00:00",
+      "start": "2026-10-08T00:00:00",
       "end": null,
       "description": "Join use for a Virtual Lunch on the Club Discord\n\nhttps://discord.gg/8jsvXNvPC",
       "location": "Club Discord"
@@ -493,7 +493,7 @@
     },
     {
       "title": "Discord Virtual Lunch",
-      "start": "2026-10-14T19:00:00",
+      "start": "2026-10-15T00:00:00",
       "end": null,
       "description": "Join use for a Virtual Lunch on the Club Discord\n\nhttps://discord.gg/8jsvXNvPC",
       "location": "Club Discord"
@@ -514,7 +514,7 @@
     },
     {
       "title": "Discord Virtual Lunch",
-      "start": "2026-10-21T19:00:00",
+      "start": "2026-10-22T00:00:00",
       "end": null,
       "description": "Join use for a Virtual Lunch on the Club Discord\n\nhttps://discord.gg/8jsvXNvPC",
       "location": "Club Discord"
@@ -528,7 +528,7 @@
     },
     {
       "title": "Discord Virtual Lunch",
-      "start": "2026-10-28T19:00:00",
+      "start": "2026-10-29T00:00:00",
       "end": null,
       "description": "Join use for a Virtual Lunch on the Club Discord\n\nhttps://discord.gg/8jsvXNvPC",
       "location": "Club Discord"
@@ -542,7 +542,7 @@
     },
     {
       "title": "Discord Virtual Lunch",
-      "start": "2026-11-04T18:00:00",
+      "start": "2026-11-05T00:00:00",
       "end": null,
       "description": "Join use for a Virtual Lunch on the Club Discord\n\nhttps://discord.gg/8jsvXNvPC",
       "location": "Club Discord"
@@ -556,7 +556,7 @@
     },
     {
       "title": "Discord Virtual Lunch",
-      "start": "2026-11-11T18:00:00",
+      "start": "2026-11-12T00:00:00",
       "end": null,
       "description": "Join use for a Virtual Lunch on the Club Discord\n\nhttps://discord.gg/8jsvXNvPC",
       "location": "Club Discord"
@@ -570,7 +570,7 @@
     },
     {
       "title": "Discord Virtual Lunch",
-      "start": "2026-11-18T18:00:00",
+      "start": "2026-11-19T00:00:00",
       "end": null,
       "description": "Join use for a Virtual Lunch on the Club Discord\n\nhttps://discord.gg/8jsvXNvPC",
       "location": "Club Discord"
@@ -591,7 +591,7 @@
     },
     {
       "title": "Discord Virtual Lunch",
-      "start": "2026-11-25T18:00:00",
+      "start": "2026-11-26T00:00:00",
       "end": null,
       "description": "Join use for a Virtual Lunch on the Club Discord\n\nhttps://discord.gg/8jsvXNvPC",
       "location": "Club Discord"
@@ -605,7 +605,7 @@
     },
     {
       "title": "Discord Virtual Lunch",
-      "start": "2026-12-02T18:00:00",
+      "start": "2026-12-03T00:00:00",
       "end": null,
       "description": "Join use for a Virtual Lunch on the Club Discord\n\nhttps://discord.gg/8jsvXNvPC",
       "location": "Club Discord"
@@ -619,7 +619,7 @@
     },
     {
       "title": "Discord Virtual Lunch",
-      "start": "2026-12-09T18:00:00",
+      "start": "2026-12-10T00:00:00",
       "end": null,
       "description": "Join use for a Virtual Lunch on the Club Discord\n\nhttps://discord.gg/8jsvXNvPC",
       "location": "Club Discord"
@@ -633,7 +633,7 @@
     },
     {
       "title": "Discord Virtual Lunch",
-      "start": "2026-12-16T18:00:00",
+      "start": "2026-12-17T00:00:00",
       "end": null,
       "description": "Join use for a Virtual Lunch on the Club Discord\n\nhttps://discord.gg/8jsvXNvPC",
       "location": "Club Discord"
@@ -654,7 +654,7 @@
     },
     {
       "title": "Discord Virtual Lunch",
-      "start": "2026-12-23T18:00:00",
+      "start": "2026-12-24T00:00:00",
       "end": null,
       "description": "Join use for a Virtual Lunch on the Club Discord\n\nhttps://discord.gg/8jsvXNvPC",
       "location": "Club Discord"
@@ -668,7 +668,7 @@
     },
     {
       "title": "Discord Virtual Lunch",
-      "start": "2026-12-30T18:00:00",
+      "start": "2026-12-31T00:00:00",
       "end": null,
       "description": "Join use for a Virtual Lunch on the Club Discord\n\nhttps://discord.gg/8jsvXNvPC",
       "location": "Club Discord"
@@ -682,7 +682,7 @@
     },
     {
       "title": "Discord Virtual Lunch",
-      "start": "2027-01-06T18:00:00",
+      "start": "2027-01-07T00:00:00",
       "end": null,
       "description": "Join use for a Virtual Lunch on the Club Discord\n\nhttps://discord.gg/8jsvXNvPC",
       "location": "Club Discord"
@@ -696,7 +696,7 @@
     },
     {
       "title": "Discord Virtual Lunch",
-      "start": "2027-01-13T18:00:00",
+      "start": "2027-01-14T00:00:00",
       "end": null,
       "description": "Join use for a Virtual Lunch on the Club Discord\n\nhttps://discord.gg/8jsvXNvPC",
       "location": "Club Discord"
@@ -717,7 +717,7 @@
     },
     {
       "title": "Discord Virtual Lunch",
-      "start": "2027-01-20T18:00:00",
+      "start": "2027-01-21T00:00:00",
       "end": null,
       "description": "Join use for a Virtual Lunch on the Club Discord\n\nhttps://discord.gg/8jsvXNvPC",
       "location": "Club Discord"
@@ -731,7 +731,7 @@
     },
     {
       "title": "Discord Virtual Lunch",
-      "start": "2027-01-27T18:00:00",
+      "start": "2027-01-28T00:00:00",
       "end": null,
       "description": "Join use for a Virtual Lunch on the Club Discord\n\nhttps://discord.gg/8jsvXNvPC",
       "location": "Club Discord"
@@ -745,7 +745,7 @@
     },
     {
       "title": "Discord Virtual Lunch",
-      "start": "2027-02-03T18:00:00",
+      "start": "2027-02-04T00:00:00",
       "end": null,
       "description": "Join use for a Virtual Lunch on the Club Discord\n\nhttps://discord.gg/8jsvXNvPC",
       "location": "Club Discord"
@@ -759,7 +759,7 @@
     },
     {
       "title": "Discord Virtual Lunch",
-      "start": "2027-02-10T18:00:00",
+      "start": "2027-02-11T00:00:00",
       "end": null,
       "description": "Join use for a Virtual Lunch on the Club Discord\n\nhttps://discord.gg/8jsvXNvPC",
       "location": "Club Discord"
@@ -773,7 +773,7 @@
     },
     {
       "title": "Discord Virtual Lunch",
-      "start": "2027-02-17T18:00:00",
+      "start": "2027-02-18T00:00:00",
       "end": null,
       "description": "Join use for a Virtual Lunch on the Club Discord\n\nhttps://discord.gg/8jsvXNvPC",
       "location": "Club Discord"
@@ -794,7 +794,7 @@
     },
     {
       "title": "Discord Virtual Lunch",
-      "start": "2027-02-24T18:00:00",
+      "start": "2027-02-25T00:00:00",
       "end": null,
       "description": "Join use for a Virtual Lunch on the Club Discord\n\nhttps://discord.gg/8jsvXNvPC",
       "location": "Club Discord"
@@ -808,7 +808,7 @@
     },
     {
       "title": "Discord Virtual Lunch",
-      "start": "2027-03-03T18:00:00",
+      "start": "2027-03-04T00:00:00",
       "end": null,
       "description": "Join use for a Virtual Lunch on the Club Discord\n\nhttps://discord.gg/8jsvXNvPC",
       "location": "Club Discord"
@@ -822,7 +822,7 @@
     },
     {
       "title": "Discord Virtual Lunch",
-      "start": "2027-03-10T18:00:00",
+      "start": "2027-03-11T00:00:00",
       "end": null,
       "description": "Join use for a Virtual Lunch on the Club Discord\n\nhttps://discord.gg/8jsvXNvPC",
       "location": "Club Discord"
@@ -836,7 +836,7 @@
     },
     {
       "title": "Discord Virtual Lunch",
-      "start": "2027-03-17T19:00:00",
+      "start": "2027-03-18T00:00:00",
       "end": null,
       "description": "Join use for a Virtual Lunch on the Club Discord\n\nhttps://discord.gg/8jsvXNvPC",
       "location": "Club Discord"
@@ -857,7 +857,7 @@
     },
     {
       "title": "Discord Virtual Lunch",
-      "start": "2027-03-24T19:00:00",
+      "start": "2027-03-25T00:00:00",
       "end": null,
       "description": "Join use for a Virtual Lunch on the Club Discord\n\nhttps://discord.gg/8jsvXNvPC",
       "location": "Club Discord"
@@ -871,7 +871,7 @@
     },
     {
       "title": "Discord Virtual Lunch",
-      "start": "2027-03-31T19:00:00",
+      "start": "2027-04-01T00:00:00",
       "end": null,
       "description": "Join use for a Virtual Lunch on the Club Discord\n\nhttps://discord.gg/8jsvXNvPC",
       "location": "Club Discord"
@@ -885,7 +885,7 @@
     },
     {
       "title": "Discord Virtual Lunch",
-      "start": "2027-04-07T19:00:00",
+      "start": "2027-04-08T00:00:00",
       "end": null,
       "description": "Join use for a Virtual Lunch on the Club Discord\n\nhttps://discord.gg/8jsvXNvPC",
       "location": "Club Discord"
@@ -899,7 +899,7 @@
     },
     {
       "title": "Discord Virtual Lunch",
-      "start": "2027-04-14T19:00:00",
+      "start": "2027-04-15T00:00:00",
       "end": null,
       "description": "Join use for a Virtual Lunch on the Club Discord\n\nhttps://discord.gg/8jsvXNvPC",
       "location": "Club Discord"
@@ -920,7 +920,7 @@
     },
     {
       "title": "Discord Virtual Lunch",
-      "start": "2027-04-21T19:00:00",
+      "start": "2027-04-22T00:00:00",
       "end": null,
       "description": "Join use for a Virtual Lunch on the Club Discord\n\nhttps://discord.gg/8jsvXNvPC",
       "location": "Club Discord"
