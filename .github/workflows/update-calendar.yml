@@ -1,9 +1,6 @@
 name: Update Calendar
 
 on:
-  schedule:
-    # Every 6 hours (midnight, 6am, noon, 6pm Central)
-    - cron: '0 5,11,17,23 * * *'
   workflow_dispatch:
 
 permissions:
