@@ -56,7 +56,7 @@ function utcToChicago(date) {
 }
 
 function toLocalString(date, hasTZ) {
-    return hasTZ ? wallClockString(date) : utcToChicago(date);
+    return wallClockString(date);
 }
 
 function fetchICS(url, redirectCount = 0) {
