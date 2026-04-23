@@ -1,2 +1,3 @@
 # hchams-website
-linux static website for HCHAMS
+
+Website for the Hays Caldwell Ham Radio Club
