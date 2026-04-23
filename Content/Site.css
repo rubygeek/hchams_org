@@ -9,6 +9,7 @@ body {
     padding-bottom: 40px;
     background-color: #f0f4f8;
     color: #222;
+    overflow-x: hidden;
 }
 
 .body-content {
@@ -107,6 +108,10 @@ p {
     color: #ffffff;
 }
 
+#KylePD-Link {
+    text-decoration: none;
+}
+
 /* ---- Buttons ---- */
 .btn-primary {
     background-color: #c8920a;
@@ -159,6 +164,7 @@ p {
 .table-striped > tbody > tr:nth-of-type(odd) {
     background-color: #e8f0f8;
 }
+
 
 /* ---- Links ---- */
 a {
