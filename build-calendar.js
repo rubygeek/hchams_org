@@ -16,7 +16,7 @@ const ical    = require('ical');
 const fs      = require('fs');
 const path    = require('path');
 
-const ICS_URL    = 'https://groups.io/g/hchams/ics/7239158/2068135138/feed.ics'
+const ICS_URL    = 'https://groups.io/g/hchams/ics/7239158/2068135138/feed.ics';
 const OUTPUT_DIR = './generated';
 const OUT_FILE   = path.join(OUTPUT_DIR, 'events.json');
 
