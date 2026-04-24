@@ -50,139 +50,14 @@
       and bring it to a meeting or mail it in.
     </div>
 
-    <!-- Submits as an email via the user's mail client. -->
-    <!-- For a backend-free web form, replace the action with a Formspree endpoint. -->
-    <form action="mailto:baummeister@gmail.com" method="post" enctype="text/plain">
+    <p>Annual club dues are $20, payable at the start of each calendar year. Please make checks payable to <strong>"Hays-Caldwell Amateur Radio Club"</strong>, or pay online via PayPal from the <a href="index.html">home page</a>.</p>
 
-      <h2>Member Information</h2>
-      <div style="background-color: #ffff99; padding: 15px; border-radius: 4px; margin-bottom: 20px;">
-
-        <div class="form-group">
-          <label for="tbName">Name:</label>
-          <input type="text" id="tbName" name="Name" class="form-control" style="max-width: 400px;" />
-        </div>
-
-        <div class="row">
-          <div class="col-xs-6 col-sm-4">
-            <div class="form-group">
-              <label for="tbCallsign">Callsign:</label>
-              <input type="text" id="tbCallsign" name="Callsign" class="form-control" />
-            </div>
-          </div>
-          <div class="col-xs-6 col-sm-4">
-            <div class="form-group">
-              <label for="tbClass">License Class:</label>
-              <input type="text" id="tbClass" name="LicenseClass" class="form-control" />
-            </div>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="col-xs-12 col-sm-5">
-            <div class="form-group">
-              <label for="tbCellPhone">Cell Phone:</label>
-              <input type="tel" id="tbCellPhone" name="CellPhone" class="form-control" />
-            </div>
-          </div>
-          <div class="col-xs-12 col-sm-5">
-            <div class="form-group">
-              <label for="tbHomePhone">Home Phone:</label>
-              <input type="tel" id="tbHomePhone" name="HomePhone" class="form-control" />
-            </div>
-          </div>
-        </div>
-
-        <div class="form-group">
-          <label for="tbEmail">Email:</label>
-          <input type="email" id="tbEmail" name="Email" class="form-control" style="max-width: 400px;" />
-        </div>
-
-        <div class="form-group">
-          <label for="tbAddress">Mailing Address:</label>
-          <input type="text" id="tbAddress" name="Address" class="form-control" style="max-width: 400px;" />
-        </div>
-
-        <div class="row">
-          <div class="col-xs-12 col-sm-5">
-            <div class="form-group">
-              <label for="tbCity">City:</label>
-              <input type="text" id="tbCity" name="City" class="form-control" />
-            </div>
-          </div>
-          <div class="col-xs-4 col-sm-2">
-            <div class="form-group">
-              <label for="tbState">State:</label>
-              <input type="text" id="tbState" name="State" class="form-control" />
-            </div>
-          </div>
-          <div class="col-xs-8 col-sm-3">
-            <div class="form-group">
-              <label for="tbZip">Zip:</label>
-              <input type="text" id="tbZip" name="Zip" class="form-control" />
-            </div>
-          </div>
-        </div>
-
-        <div class="form-group">
-          <label for="tbEmergencyContact">Emergency Contact:</label>
-          <input type="text" id="tbEmergencyContact" name="EmergencyContact" class="form-control" style="max-width: 400px;" />
-        </div>
-
-      </div>
-
-      <h2>Ham Radio Level of Interest</h2>
-      <div style="background-color: #ffff99; padding: 15px; border-radius: 4px; margin-bottom: 20px;">
-
-        <div class="form-group">
-          <label>Are you a member of ARRL?</label><br />
-          <label class="radio-inline"><input type="radio" name="ARRL" value="yes" /> Yes</label>
-          <label class="radio-inline"><input type="radio" name="ARRL" value="no" /> No</label>
-        </div>
-
-        <div class="form-group">
-          <label>What club activities are you willing to work on?</label><br />
-          <label class="checkbox-inline"><input type="checkbox" name="Activities" value="Field Day" /> Field Day</label>
-          <label class="checkbox-inline"><input type="checkbox" name="Activities" value="Social Activities" /> Social Activities</label>
-          <label class="checkbox-inline"><input type="checkbox" name="Activities" value="Instruct Radio Classes" /> Instruct Radio Classes</label>
-          <label class="checkbox-inline"><input type="checkbox" name="Activities" value="Club Officer" /> Club Officer</label>
-          <label class="checkbox-inline"><input type="checkbox" name="Activities" value="Present at Meeting" /> Present a Program at Meeting</label>
-          <label class="checkbox-inline"><input type="checkbox" name="Activities" value="ARES" /> ARES</label>
-        </div>
-
-        <div class="form-group">
-          <label for="tbOther">Other:</label>
-          <input type="text" id="tbOther" name="Other" class="form-control" style="max-width: 400px;" />
-        </div>
-
-      </div>
-
-      <h2>Rig Information</h2>
-      <div style="background-color: #ffff99; padding: 15px; border-radius: 4px; margin-bottom: 20px;">
-
-        <div class="form-group">
-          <label>Please indicate the radio equipment you have and are licensed to use:</label><br />
-          <label class="checkbox-inline"><input type="checkbox" name="Rig" value="VHF Handheld" /> VHF Handheld</label>
-          <label class="checkbox-inline"><input type="checkbox" name="Rig" value="VHF Mobile" /> VHF Mobile</label>
-          <label class="checkbox-inline"><input type="checkbox" name="Rig" value="VHF Base" /> VHF Base</label>
-          <label class="checkbox-inline"><input type="checkbox" name="Rig" value="UHF Handheld" /> UHF Handheld</label>
-          <label class="checkbox-inline"><input type="checkbox" name="Rig" value="UHF Mobile" /> UHF Mobile</label>
-          <label class="checkbox-inline"><input type="checkbox" name="Rig" value="UHF Base" /> UHF Base</label>
-        </div>
-
-        <div class="form-group">
-          <label for="tbHFModel">HF Brand/Model:</label>
-          <input type="text" id="tbHFModel" name="HFModel" class="form-control" style="max-width: 400px;" />
-        </div>
-
-      </div>
-
-      <button type="submit" class="btn btn-primary">Submit</button>
-
-    </form>
-
-    <p style="margin-top: 20px;">Annual club dues are $20, payable at the start of each calendar year.</p>
-    <p>Please make checks payable to <strong>"Hays-Caldwell Amateur Radio Club"</strong></p>
-    <p>Or pay online via PayPal from the <a href="index.html">home page</a>.</p>
+    <iframe
+      src="https://docs.google.com/forms/d/e/1FAIpQLScrGdShDQHh9theV9-PmU89v7r8Mm-pXn0x04rGJ8pCrDMU1g/viewform?embedded=true"
+      width="100%" height="1981" frameborder="0" marginheight="0" marginwidth="0"
+      style="border-radius: 4px;">
+      Loading…
+    </iframe>
 
   </div>
 
