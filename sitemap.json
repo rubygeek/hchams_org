@@ -1,0 +1,97 @@
+{
+  "site": {
+    "name": "Houston Cultural Heritage Amateur Radio and Multisport Society (HCHAMS)",
+    "url": "https://hchams.org",
+    "description": "Welcome to HCHAMS - Amateur Radio and Multisport Society in Houston",
+    "lastUpdated": "2026-04-28",
+    "pages": [
+      {
+        "id": "home",
+        "title": "Home",
+        "url": "/",
+        "path": "index.html",
+        "priority": 1.0,
+        "changeFrequency": "weekly",
+        "description": "Welcome to Houston Cultural Heritage Amateur Radio and Multisport Society",
+        "category": "main",
+        "relatedPages": ["about", "schedule", "contact"]
+      },
+      {
+        "id": "about",
+        "title": "About Us",
+        "url": "/About.html",
+        "path": "About.html",
+        "priority": 0.9,
+        "changeFrequency": "monthly",
+        "description": "Learn about the mission, history, and values of HCHAMS",
+        "category": "main",
+        "relatedPages": ["home", "learnmore", "contact"]
+      },
+      {
+        "id": "learnmore",
+        "title": "Learn More",
+        "url": "/LearnMore.html",
+        "path": "LearnMore.html",
+        "priority": 0.8,
+        "changeFrequency": "monthly",
+        "description": "Discover additional information and resources about HCHAMS",
+        "category": "main",
+        "relatedPages": ["about", "schedule"]
+      },
+      {
+        "id": "schedule",
+        "title": "Schedule",
+        "url": "/schedule.html",
+        "path": "schedule.html",
+        "priority": 0.9,
+        "changeFrequency": "weekly",
+        "description": "View upcoming events, meetings, and activities",
+        "category": "events",
+        "relatedPages": ["home", "swap-fest", "contact"]
+      },
+      {
+        "id": "swap-fest",
+        "title": "May 2026 Swap Fest",
+        "url": "/may-2026-swap-fest.html",
+        "path": "may-2026-swap-fest.html",
+        "priority": 0.9,
+        "changeFrequency": "weekly",
+        "description": "Details about the May 2026 Swap Fest event",
+        "category": "events",
+        "eventDate": "2026-05-01",
+        "relatedPages": ["schedule", "contact"]
+      },
+      {
+        "id": "membership",
+        "title": "Membership Form",
+        "url": "/MembershipForm.html",
+        "path": "MembershipForm.html",
+        "priority": 0.8,
+        "changeFrequency": "monthly",
+        "description": "Join HCHAMS - fill out the membership application form",
+        "category": "member",
+        "relatedPages": ["about", "contact"]
+      },
+      {
+        "id": "contact",
+        "title": "Contact Us",
+        "url": "/Contact.html",
+        "path": "Contact.html",
+        "priority": 0.8,
+        "changeFrequency": "monthly",
+        "description": "Get in touch with HCHAMS - find contact information",
+        "category": "member",
+        "relatedPages": ["home", "membership"]
+      }
+    ],
+    "categories": {
+      "main": "Main informational pages",
+      "events": "Events and activities",
+      "member": "Membership and contact pages"
+    },
+    "navigationHierarchy": {
+      "primary": ["home", "about", "schedule"],
+      "secondary": ["learnmore", "swap-fest", "membership", "contact"]
+    }
+  }
+}

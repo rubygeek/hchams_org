@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://hchams.org/</loc>
+    <lastmod>2026-04-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <title>Home - HCHAMS</title>
+    <description>Welcome to Houston Cultural Heritage Amateur Radio and Multisport Society</description>
+  </url>
+  
+  <url>
+    <loc>https://hchams.org/About.html</loc>
+    <lastmod>2026-04-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <title>About Us - HCHAMS</title>
+    <description>Learn about the Houston Cultural Heritage Amateur Radio and Multisport Society</description>
+  </url>
+  
+  <url>
+    <loc>https://hchams.org/LearnMore.html</loc>
+    <lastmod>2026-04-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <title>Learn More - HCHAMS</title>
+    <description>Additional information and resources about HCHAMS</description>
+  </url>
+  
+  <url>
+    <loc>https://hchams.org/schedule.html</loc>
+    <lastmod>2026-04-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <title>Schedule - HCHAMS</title>
+    <description>View upcoming events and meeting schedules</description>
+  </url>
+  
+  <url>
+    <loc>https://hchams.org/may-2026-swap-fest.html</loc>
+    <lastmod>2026-04-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <title>May 2026 Swap Fest - HCHAMS</title>
+    <description>Details about the May 2026 Swap Fest event</description>
+  </url>
+  
+  <url>
+    <loc>https://hchams.org/MembershipForm.html</loc>
+    <lastmod>2026-04-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <title>Membership Form - HCHAMS</title>
+    <description>Join HCHAMS - membership application form</description>
+  </url>
+  
+  <url>
+    <loc>https://hchams.org/Contact.html</loc>
+    <lastmod>2026-04-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <title>Contact Us - HCHAMS</title>
+    <description>Get in touch with HCHAMS</description>
+  </url>
+</urlset>

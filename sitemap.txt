@@ -1,0 +1,110 @@
+================================================================================
+HCHAMS WEBSITE SITEMAP
+Houston Cultural Heritage Amateur Radio and Multisport Society
+https://hchams.org
+Last Updated: April 28, 2026
+================================================================================
+
+MAIN PAGES
+──────────────────────────────────────────────────────────────────────────────
+
+🏠 HOME
+   URL: /
+   File: index.html
+   Description: Welcome to Houston Cultural Heritage Amateur Radio and 
+                Multisport Society
+   Priority: High
+   Updated: Weekly
+
+ℹ️ ABOUT US
+   URL: /About.html
+   File: About.html
+   Description: Learn about the mission, history, and values of HCHAMS
+   Priority: High
+   Updated: Monthly
+
+📚 LEARN MORE
+   URL: /LearnMore.html
+   File: LearnMore.html
+   Description: Discover additional information and resources about HCHAMS
+   Priority: Medium
+   Updated: Monthly
+
+
+EVENTS & ACTIVITIES
+──────────────────────────────────────────────────────────────────────────────
+
+📅 SCHEDULE
+   URL: /schedule.html
+   File: schedule.html
+   Description: View upcoming events, meetings, and activities calendar
+   Priority: High
+   Updated: Weekly
+
+🎉 MAY 2026 SWAP FEST
+   URL: /may-2026-swap-fest.html
+   File: may-2026-swap-fest.html
+   Description: Details about the May 2026 Swap Fest event, registration, 
+                and information
+   Priority: High
+   Updated: Weekly
+   Event Date: May 2026
+
+
+MEMBERSHIP & CONTACT
+──────────────────────────────────────────────────────────────────────────────
+
+📝 MEMBERSHIP FORM
+   URL: /MembershipForm.html
+   File: MembershipForm.html
+   Description: Join HCHAMS - fill out the membership application form
+   Priority: Medium
+   Updated: Monthly
+
+📧 CONTACT US
+   URL: /Contact.html
+   File: Contact.html
+   Description: Get in touch with HCHAMS - contact information and form
+   Priority: Medium
+   Updated: Monthly
+
+
+RESOURCES
+──────────────────────────────────────────────────────────────────────────────
+
+📄 CLUB APPLICATION FORM
+   URL: /ClubApplicationForm.pdf
+   File: ClubApplicationForm.pdf
+   Type: PDF
+   Description: Official club application form
+
+
+NAVIGATION FLOW
+──────────────────────────────────────────────────────────────────────────────
+
+Quick Entry Points:
+   Home → About → Learn More
+   Home → Schedule → Swap Fest
+   Home → Membership → Contact
+
+Common User Paths:
+   New Visitor:     Home → About → Learn More → Schedule
+   Interested:      Schedule → Swap Fest → Contact
+   Joining:         About → Membership → Contact
+   Event Info:      Schedule → Swap Fest
+
+
+KEY CONTACT POINTS
+──────────────────────────────────────────────────────────────────────────────
+- Contact page: /Contact.html
+- Membership form: /MembershipForm.html
+- Schedule: /schedule.html
+
+
+MACHINE-READABLE VERSIONS
+──────────────────────────────────────────────────────────────────────────────
+- XML Sitemap: /sitemap.xml (for search engines)
+- JSON Sitemap: /sitemap.json (for AI agents and APIs)
+- HTML Sitemap: /sitemap.html (for website visitors)
+
+================================================================================
