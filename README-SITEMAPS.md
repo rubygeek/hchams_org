@@ -1,9 +1,9 @@
-# HCHAMS Website Sitemaps - Complete Guide
+# HCARC Website Sitemaps - Complete Guide
 
-**Organization:** Houston Cultural Heritage Amateur Radio and Multisport Society  
-**Website:** https://hchams.org  
+**Organization:** Hays-Caldwell Amateur Radio Club
+**Website:** https://hchams.com
 **Sitemap Version:** 1.0  
-**Last Updated:** 2026-04-28
+**Last Updated:** 2026-05-20
 
 ---
 
@@ -173,7 +173,7 @@ Home (index.html) - Entry point
 ├─ About.html - Organization info
 ├─ LearnMore.html - Resources
 ├─ schedule.html - Events calendar ⚠️ Updates weekly
-├─ may-2026-swap-fest.html - Event details ⚠️ Updates weekly
+├─ field-day-2026.html - Event details ⚠️ Updates weekly
 ├─ MembershipForm.html - Join form
 └─ Contact.html - Get in touch
 ```
@@ -279,7 +279,7 @@ hchams_org/
 ├── Contact.html
 ├── LearnMore.html
 ├── schedule.html
-├── may-2026-swap-fest.html
+├── field-day-2026.html
 ├── MembershipForm.html
 │
 ├── Content/
@@ -370,7 +370,7 @@ For questions about site navigation or structure:
 
 ### Pages to Monitor Frequently
 - `/schedule.html` - Changes weekly
-- `/may-2026-swap-fest.html` - Event-specific updates
+- `/field-day-2026.html` - Event-specific updates
 - `/index.html` - Featured content changes
 
 ### Pages to Monitor Monthly
@@ -404,14 +404,14 @@ Before deploying sitemaps to your site:
 
 | Version | Date | Changes |
 |---------|------|---------|
-| 1.0 | 2026-04-28 | Initial release - 6 format sitemaps + agent guide |
+| 1.0 | 2026-05-20 | Initial release - 6 format sitemaps + agent guide |
 
 ---
 
 ## 🎯 Next Steps
 
 1. **Copy all files** to `/Users/nola/code/hchams_org/`
-2. **Update `robots.txt`** to add: `Sitemap: https://hchams.org/sitemap.xml`
+2. **Update `robots.txt`** to add: `Sitemap: https://hchams.com/sitemap.xml`
 3. **Link to `sitemap.html`** from your footer (optional)
 4. **Share `AGENT-GUIDE.md`** with any AI agents/partners you work with
 5. **Test navigation** using each format

@@ -1,4 +1,3 @@
 User-agent: *
 Disallow: /scripts/
-Sitemap: https://hchams.org/sitemap.xml
-
+Sitemap: https://hchams.com/sitemap.xml

@@ -1,65 +1,74 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://hchams.org/</loc>
-    <lastmod>2026-04-28</lastmod>
+    <loc>https://hchams.com/</loc>
+    <lastmod>2026-05-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
-    <title>Home - HCHAMS</title>
-    <description>Welcome to Houston Cultural Heritage Amateur Radio and Multisport Society</description>
+    <title>Home - HCARC KE5LOT</title>
+    <description>Home page for Hays-Caldwell Amateur Radio Club, serving amateur radio operators across Hays and Caldwell counties.</description>
   </url>
-  
+
   <url>
-    <loc>https://hchams.org/About.html</loc>
-    <lastmod>2026-04-28</lastmod>
+    <loc>https://hchams.com/About.html</loc>
+    <lastmod>2026-05-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
-    <title>About Us - HCHAMS</title>
-    <description>Learn about the Houston Cultural Heritage Amateur Radio and Multisport Society</description>
+    <title>About - HCARC KE5LOT</title>
+    <description>Learn about Hays-Caldwell Amateur Radio Club, KE5LOT, including the club mission, meetings, officers, and brochure.</description>
   </url>
-  
+
   <url>
-    <loc>https://hchams.org/LearnMore.html</loc>
-    <lastmod>2026-04-28</lastmod>
+    <loc>https://hchams.com/LearnMore.html</loc>
+    <lastmod>2026-05-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <title>Learn More - HCHAMS</title>
-    <description>Additional information and resources about HCHAMS</description>
+    <title>Learn More - HCARC KE5LOT</title>
+    <description>Find HCARC resources, club background, and links for ARRL and ARES amateur radio information.</description>
   </url>
-  
+
   <url>
-    <loc>https://hchams.org/schedule.html</loc>
-    <lastmod>2026-04-28</lastmod>
+    <loc>https://hchams.com/schedule.html</loc>
+    <lastmod>2026-05-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
-    <title>Schedule - HCHAMS</title>
-    <description>View upcoming events and meeting schedules</description>
+    <title>Schedule - HCARC KE5LOT</title>
+    <description>View HCARC weekly activities, net control rotation, monthly meetings, and upcoming club events.</description>
   </url>
-  
+
   <url>
-    <loc>https://hchams.org/may-2026-swap-fest.html</loc>
-    <lastmod>2026-04-28</lastmod>
+    <loc>https://hchams.com/field-day-2026.html</loc>
+    <lastmod>2026-05-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
-    <title>May 2026 Swap Fest - HCHAMS</title>
-    <description>Details about the May 2026 Swap Fest event</description>
+    <title>Moon Shot Field Day 2026 - HCARC KE5LOT</title>
+    <description>Event details for HCARC Moon Shot Field Day 2026, including date, time, location, and activities.</description>
   </url>
-  
+
   <url>
-    <loc>https://hchams.org/MembershipForm.html</loc>
-    <lastmod>2026-04-28</lastmod>
+    <loc>https://hchams.com/MembershipForm.html</loc>
+    <lastmod>2026-05-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <title>Membership Form - HCHAMS</title>
-    <description>Join HCHAMS - membership application form</description>
+    <title>Membership Form - HCARC KE5LOT</title>
+    <description>Join Hays-Caldwell Amateur Radio Club using the online membership form or printable application.</description>
   </url>
-  
+
   <url>
-    <loc>https://hchams.org/Contact.html</loc>
-    <lastmod>2026-04-28</lastmod>
+    <loc>https://hchams.com/Contact.html</loc>
+    <lastmod>2026-05-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <title>Contact Us - HCHAMS</title>
-    <description>Get in touch with HCHAMS</description>
+    <title>Contact - HCARC KE5LOT</title>
+    <description>Contact HCARC officers, join the mailing list, connect on Discord, and find meeting location details.</description>
+  </url>
+
+  <url>
+    <loc>https://hchams.com/ClubApplicationForm.pdf</loc>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <title>Club Application Form - HCARC</title>
+    <description>Printable Hays-Caldwell Amateur Radio Club membership application form.</description>
   </url>
 </urlset>

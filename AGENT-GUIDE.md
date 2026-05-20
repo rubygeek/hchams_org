@@ -1,23 +1,23 @@
-# Agent Navigation Guide for HCHAMS
+# Agent Navigation Guide for HCARC
 
 ## Overview
 
-This guide helps AI agents and automated systems navigate and understand the HCHAMS website structure, content patterns, and data locations.
+This guide helps AI agents and automated systems navigate and understand the HCARC website structure, content patterns, and data locations.
 
 ---
 
 ## Part 1: Site Understanding
 
 ### Organization Identity
-- **Full Name:** Houston Cultural Heritage Amateur Radio and Multisport Society
-- **Acronym:** HCHAMS
-- **Type:** Amateur radio club + Multisport organization
-- **Location:** Houston (likely Texas, USA)
-- **Domain:** hchams.org
+- **Full Name:** Hays-Caldwell Amateur Radio Club
+- **Acronym:** HCARC
+- **Type:** Amateur radio club
+- **Location:** Hays and Caldwell counties, Texas
+- **Domain:** hchams.com
 
 ### Primary Purposes
-1. **Community Building** - Bring together amateur radio and multisport enthusiasts
-2. **Event Hosting** - Organize and promote events (Swap Fest, meetings)
+1. **Community Building** - Bring together amateur radio operators and learners
+2. **Event Hosting** - Organize and promote events (Field Day, meetings)
 3. **Member Management** - Recruitment and membership operations
 4. **Information Sharing** - Educate about amateur radio and activities
 
@@ -74,7 +74,7 @@ Look for: <nav>, <header>, <a> tags pointing to:
 
 - What We Do
   └─ Amateur radio activities
-  └─ Multisport activities
+  └─ Club activities
   └─ Events hosted
   └─ Community benefits
 
@@ -171,7 +171,7 @@ More info: /Contact.html
 
 ---
 
-#### Path D: May 2026 Swap Fest (`/may-2026-swap-fest.html`)
+#### Path D: Moon Shot Field Day 2026 (`/field-day-2026.html`)
 
 **Content Type:** Event Details  
 **Update Frequency:** Weekly (🔴 High - event-specific)  
@@ -181,7 +181,7 @@ More info: /Contact.html
 
 ```yaml
 Event Details:
-  - Event name: May 2026 Swap Fest
+  - Event name: Moon Shot Field Day 2026
   - Date: [Extract from page]
   - Time: [Extract from page]
   - Location: [Address]
@@ -249,7 +249,7 @@ Form structure:
 │  └─ Address (if required)
 ├─ Experience Level
 │  ├─ Amateur radio experience
-│  ├─ Multisport experience
+│  ├─ Club activity experience
 │  └─ Skills/interests
 └─ Submission info
    ├─ Where form posts to
@@ -351,11 +351,11 @@ LearnMore.html
 └─ Meta info: Additional resources
 
 schedule.html
-├─ Links to: may-2026-swap-fest, Contact, Home
+├─ Links to: field-day-2026, Contact, Home
 ├─ Linked from: Home, Membership, Contact
 └─ Meta info: Calendar view - update frequently
 
-may-2026-swap-fest.html
+field-day-2026.html
 ├─ Links to: schedule, Contact, Home
 ├─ Linked from: schedule, Home
 └─ Meta info: Event detail page
@@ -377,7 +377,7 @@ Contact.html
 
 ### For Information Queries
 
-**Query: "Tell me about HCHAMS"**
+**Query: "Tell me about HCARC"**
 ```
 Primary source: /About.html
 Secondary sources: /LearnMore.html, home
@@ -402,7 +402,7 @@ Data points:
 **Query: "What events do you have?"**
 ```
 Primary source: /schedule.html
-Secondary source: /may-2026-swap-fest.html
+Secondary source: /field-day-2026.html
 Data points:
   - Event dates/times
   - Locations
@@ -412,7 +412,7 @@ Data points:
 
 ### For Contact Queries
 
-**Query: "How do I reach HCHAMS?"**
+**Query: "How do I reach HCARC?"**
 ```
 Primary source: /Contact.html
 Data points:
@@ -429,14 +429,14 @@ Data points:
 
 ### URL Patterns
 ```
-Base domain: https://hchams.org
+Base domain: https://hchams.com
 
 HTML files at root:
   / or /index.html     → Home
   /About.html          → About
   /LearnMore.html      → Learn More
   /schedule.html       → Schedule
-  /may-2026-swap-fest.html → Event
+  /field-day-2026.html → Event
   /MembershipForm.html → Membership
   /Contact.html        → Contact
 
@@ -547,7 +547,7 @@ robots.txt location: /robots.txt
 1. Navigate to /schedule.html
 2. Extract all event entries
 3. Parse dates, times, locations
-4. Check /may-2026-swap-fest.html for details
+4. Check /field-day-2026.html for details
 5. Return formatted list with:
    - Event name
    - Date/time
@@ -626,7 +626,7 @@ robots.txt location: /robots.txt
 | Organization info | `/About.html` | Home, Learn More |
 | How to join | `/MembershipForm.html` | About, Contact |
 | Events/meetings | `/schedule.html` | Home, Contact |
-| Event details | `/may-2026-swap-fest.html` | Schedule, Contact |
+| Event details | `/field-day-2026.html` | Schedule, Contact |
 | Contact info | `/Contact.html` | About, Membership |
 | FAQs | `/LearnMore.html` | About, Contact |
 | General overview | `index.html` | About |
@@ -635,7 +635,7 @@ robots.txt location: /robots.txt
 
 ## Version History
 
-- **v1.0** - 2026-04-28 - Initial agent navigation guide
+- **v1.0** - 2026-05-20 - Initial agent navigation guide
 - Contains navigation patterns for 7 main pages
 - Includes data extraction strategies
 - Best practices for agent behavior
